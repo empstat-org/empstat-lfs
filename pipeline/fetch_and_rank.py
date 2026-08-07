@@ -440,11 +440,13 @@ def build(limit=None):
     for iso, inds in avail.items():
         cov, freq, rec, meta = score_country(inds)
         info = countries.get(iso, {"name": iso, "region": "Other"})
+        # region: take directly from the baked-in map (robust), fall back to toc/Other
+        region = getattr(C, "REGIONS", {}).get(iso) or info.get("region") or "Other"
         pending = compute_pending(iso, meta["latest_period"], meta["best_periodicity"], registry) if pending_on else None
         records.append({
             "iso3": iso,
             "country": info["name"],
-            "region": info["region"],
+            "region": region,
             "coverage": cov,
             "frequency": freq,
             "recency": rec,
