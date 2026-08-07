@@ -13,7 +13,7 @@ a live run, and adjust the source keywords to match how ILOSTAT labels
 administrative sources for your priority countries.
 """
 
-from config import ILOSTAT  # reuse the same ILOSTAT endpoints
+from config import ILOSTAT, REGIONS  # reuse the same ILOSTAT endpoints + region map
 
 INDEX_NAME = "Administrative Data Coverage Index"
 ENABLE_PENDING = False

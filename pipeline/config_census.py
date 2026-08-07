@@ -11,7 +11,7 @@ Same shape as config.py, but tuned for population censuses:
 Run:  python fetch_and_rank.py --config config_census --out ../web/census/data
 """
 
-from config import ILOSTAT  # reuse the same ILOSTAT endpoints
+from config import ILOSTAT, REGIONS  # reuse the same ILOSTAT endpoints + region map
 
 INDEX_NAME = "Census Coverage Index"
 ENABLE_PENDING = False
