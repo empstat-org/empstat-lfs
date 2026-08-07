@@ -230,7 +230,8 @@ def load_countries():
         for row in rows:
             iso = (row.get("ref_area") or row.get("id") or row.get("code") or "").strip()
             name = (row.get("ref_area.label") or row.get("label") or row.get("name") or "").strip()
-            region = (row.get("region") or row.get("region.label") or "").strip() or "Other"
+            # the live ref_area API has no region column, so use our baked-in map
+            region = getattr(C, "REGIONS", {}).get(iso, "Other")
             # ILOSTAT ref_area includes regional aggregates (X..) — keep 3-letter ISO only
             if iso and len(iso) == 3 and iso.isalpha():
                 out[iso] = {"name": name or iso, "region": region}
