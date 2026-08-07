@@ -175,6 +175,31 @@ def _get(url, as_text=True):
     return r.text if as_text else r.content
 
 
+def pick_bulk_base():
+    """Return the first bulk-download base URL that actually serves a file.
+    (ILO moved the bulk files between hosts, so we probe candidates.)"""
+    bases = C.ILOSTAT.get("bulk_bases") or [C.ILOSTAT.get("bulk_base")]
+    probe = "UNE_DEAP_SEX_AGE_RT_A.csv.gz"
+    ua = {"User-Agent": "lmi-ranking/1.0"}
+    for b in bases:
+        try:
+            r = requests.head(f"{b}/{probe}", timeout=30, allow_redirects=True, headers=ua)
+            if r.status_code == 200:
+                return b
+        except Exception:  # noqa: BLE001
+            pass
+    for b in bases:  # some servers block HEAD; try a streamed GET
+        try:
+            r = requests.get(f"{b}/{probe}", timeout=60, stream=True, headers=ua)
+            ok = r.status_code == 200
+            r.close()
+            if ok:
+                return b
+        except Exception:  # noqa: BLE001
+            pass
+    return bases[0]
+
+
 def _get_csv_rows(url):
     """Download a (possibly gzipped) CSV and yield dict rows."""
     content = _get(url, as_text=False)
@@ -195,17 +220,24 @@ def load_source_labels():
     source codes that qualify as household surveys per config keywords.
     """
     labels = {}
-    try:
-        rows = list(_get_csv_rows(C.ILOSTAT["codelist_survey"]))
-        # code list CSVs use columns like: code,label (names vary by version)
-        for row in rows:
-            code = (row.get("code") or row.get("SURVEY") or row.get("id") or "").strip()
-            label = (row.get("label") or row.get("Label") or row.get("description") or "").strip()
-            if code:
-                labels[code] = label
-    except Exception as e:  # noqa: BLE001
-        print(f"  ! could not load source code list ({e}); "
-              f"will keyword-match raw source strings instead", file=sys.stderr)
+    # try the rplumber code list first, then the bulk-facility dictionary CSVs
+    urls = [C.ILOSTAT["codelist_survey"]] + \
+           [f"{b}/CL_SURVEY_en.csv" for b in C.ILOSTAT.get("dic_bases", [])]
+    for u in urls:
+        try:
+            rows = list(_get_csv_rows(u))
+            for row in rows:
+                code = (row.get("code") or row.get("SURVEY") or row.get("id") or "").strip()
+                label = (row.get("label") or row.get("Label") or row.get("description") or "").strip()
+                if code:
+                    labels[code] = label
+            if labels:
+                break
+        except Exception as e:  # noqa: BLE001
+            print(f"  ! source code list not available at {u} ({e})", file=sys.stderr)
+    if not labels:
+        print("  ! no source code list loaded; keyword-matching raw source strings instead",
+              file=sys.stderr)
 
     def is_hh(label):
         l = (label or "").lower()
@@ -260,6 +292,9 @@ def gather(limit=None):
     labels, hh_codes, is_hh = load_source_labels()
     print(f"  household-survey source codes recognised: {len(hh_codes)}")
 
+    bulk_base = pick_bulk_base()
+    print(f"  using bulk base: {bulk_base}")
+
     indicators = C.KEY_INDICATORS[:limit] if limit else C.KEY_INDICATORS
     avail = defaultdict(dict)
     sources = defaultdict(dict)  # iso -> {survey label: latest year seen}
@@ -271,7 +306,7 @@ def gather(limit=None):
         for ci, base in enumerate(fetch_codes):
           for period in ind["periodicities"]:
             dataset_id = f"{base}_{period}"
-            url = f"{C.ILOSTAT['bulk_base']}/{dataset_id}.csv.gz"
+            url = f"{bulk_base}/{dataset_id}.csv.gz"
             print(f"  fetching {dataset_id} ...", flush=True)
             try:
                 rows = _get_csv_rows(url)
@@ -499,6 +534,17 @@ def main():
     out = args.out or os.path.join(os.path.dirname(__file__), "..", "web", "data")
     print(f"Config: {args.config}  ({getattr(C, 'INDEX_NAME', 'LFS Coverage Index')})")
     payload = build(limit=args.limit)
+
+    # Safety net: never overwrite the published site with an empty/short result
+    # (e.g. if ILOSTAT is unreachable or a URL changed). Leave existing data in
+    # place and exit cleanly so the site still deploys with its last-good data.
+    n = len(payload["countries"])
+    min_n = C.ILOSTAT.get("min_countries", 0)
+    if n < min_n:
+        print(f"Only {n} countries scored (minimum {min_n}). "
+              f"Keeping existing data; not overwriting. This usually means the "
+              f"ILOSTAT download URL needs updating — check the log above.")
+        return
     write_output(payload, os.path.abspath(out))
 
 

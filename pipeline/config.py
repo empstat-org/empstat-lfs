@@ -154,14 +154,26 @@ SCORING = {
 # ------------------------------------------------------------------------------
 ILOSTAT = {
     # Bulk CSV download facility (one gzip CSV per indicator+periodicity).
-    "bulk_base": "https://www.ilo.org/ilostat-files/WEB_bulk_download/indicator",
+    # ILO reorganised their site: the bulk files now live under webapps.ilo.org.
+    # The pipeline probes these bases in order and uses the first that responds.
+    "bulk_bases": [
+        "https://webapps.ilo.org/ilostat-files/WEB_bulk_download/indicator",
+        "https://www.ilo.org/ilostat-files/WEB_bulk_download/indicator",
+    ],
+    "bulk_base": "https://webapps.ilo.org/ilostat-files/WEB_bulk_download/indicator",
+    # Dictionary (code list) CSVs from the same bulk facility (fallbacks for labels).
+    "dic_bases": [
+        "https://webapps.ilo.org/ilostat-files/WEB_bulk_download/dic",
+        "https://www.ilo.org/ilostat-files/WEB_bulk_download/dic",
+    ],
     # rplumber REST API (used for the table of contents / code lists).
     "toc_indicator": "https://rplumber.ilo.org/metadata/toc/indicator/?lang=en",
     "toc_ref_area":  "https://rplumber.ilo.org/metadata/toc/ref_area/?lang=en",
-    # Source code list (CL_SURVEY) so we can turn source codes into labels.
     "codelist_survey": "https://rplumber.ilo.org/metadata/dic/CL_SURVEY/?lang=en",
-    # Reference-area (country) code list.
     "codelist_area": "https://rplumber.ilo.org/metadata/dic/CL_AREA/?lang=en",
+    # Don't overwrite the published site unless at least this many countries were
+    # scored (protects the live site if ILOSTAT is unreachable or a URL changes).
+    "min_countries": 30,
 }
 
 # Regions we display in the UI filter. ISO3 -> region.  (M49-based grouping;
