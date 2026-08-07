@@ -175,29 +175,26 @@ def _get(url, as_text=True):
     return r.text if as_text else r.content
 
 
-def pick_bulk_base():
-    """Return the first bulk-download base URL that actually serves a file.
-    (ILO moved the bulk files between hosts, so we probe candidates.)"""
+def discover_base_and_toc():
+    """Pick the bulk base by which one actually serves the table of contents,
+    and return (base_url, set_of_valid_dataset_ids | None)."""
     bases = C.ILOSTAT.get("bulk_bases") or [C.ILOSTAT.get("bulk_base")]
-    probe = "UNE_DEAP_SEX_AGE_RT_A.csv.gz"
-    ua = {"User-Agent": "lmi-ranking/1.0"}
     for b in bases:
-        try:
-            r = requests.head(f"{b}/{probe}", timeout=30, allow_redirects=True, headers=ua)
-            if r.status_code == 200:
-                return b
-        except Exception:  # noqa: BLE001
-            pass
-    for b in bases:  # some servers block HEAD; try a streamed GET
-        try:
-            r = requests.get(f"{b}/{probe}", timeout=60, stream=True, headers=ua)
-            ok = r.status_code == 200
-            r.close()
-            if ok:
-                return b
-        except Exception:  # noqa: BLE001
-            pass
-    return bases[0]
+        for toc_name in ("table_of_contents_en.csv", "table_of_contents.csv"):
+            try:
+                rows = list(_get_csv_rows(f"{b}/{toc_name}"))
+                ids = set()
+                for r in rows:
+                    i = (r.get("id") or r.get("ID") or r.get("indicator") or "").strip()
+                    if i:
+                        ids.add(i)
+                if ids:
+                    print(f"  table of contents loaded from {b}/{toc_name} ({len(ids)} datasets)")
+                    return b, ids
+            except Exception as e:  # noqa: BLE001
+                print(f"  toc not at {b}/{toc_name} ({e})")
+    print("  ! no table of contents found; will attempt downloads directly")
+    return bases[0], None
 
 
 def _get_csv_rows(url):
@@ -220,23 +217,37 @@ def load_source_labels():
     source codes that qualify as household surveys per config keywords.
     """
     labels = {}
-    # try the rplumber code list first, then the bulk-facility dictionary CSVs
-    urls = [C.ILOSTAT["codelist_survey"]] + \
-           [f"{b}/CL_SURVEY_en.csv" for b in C.ILOSTAT.get("dic_bases", [])]
+    # Try many candidate locations/filenames for the source dictionary, since
+    # ILOSTAT's exact path/columns have changed over time.
+    urls = []
+    for b in C.ILOSTAT.get("dic_bases", []):
+        urls += [f"{b}/source_en.csv", f"{b}/CL_SURVEY_en.csv",
+                 f"{b}/CL_SOURCE_en.csv", f"{b}/survey_en.csv"]
+    urls.append(C.ILOSTAT.get("codelist_survey"))
     for u in urls:
+        if not u:
+            continue
         try:
             rows = list(_get_csv_rows(u))
             for row in rows:
-                code = (row.get("code") or row.get("SURVEY") or row.get("id") or "").strip()
-                label = (row.get("label") or row.get("Label") or row.get("description") or "").strip()
+                # find a code-like and label-like column, however it's named
+                keys = list(row.keys())
+                code = (row.get("code") or row.get("source") or row.get("SOURCE")
+                        or row.get("id") or (row.get(keys[0]) if keys else "") or "").strip()
+                label = (row.get("label") or row.get("source.label") or row.get("Label")
+                         or row.get("description") or (row.get(keys[1]) if len(keys) > 1 else "") or "").strip()
                 if code:
                     labels[code] = label
             if labels:
+                print(f"  source dictionary loaded from {u} ({len(labels)} codes)")
+                # show a few so we can see the format in the log
+                sample = list(labels.items())[:6]
+                print(f"    sample: {sample}")
                 break
         except Exception as e:  # noqa: BLE001
-            print(f"  ! source code list not available at {u} ({e})", file=sys.stderr)
+            print(f"  source dictionary not at {u} ({e})", file=sys.stderr)
     if not labels:
-        print("  ! no source code list loaded; keyword-matching raw source strings instead",
+        print("  ! no source dictionary loaded; will keyword-match raw source values",
               file=sys.stderr)
 
     def is_hh(label):
@@ -292,12 +303,13 @@ def gather(limit=None):
     labels, hh_codes, is_hh = load_source_labels()
     print(f"  household-survey source codes recognised: {len(hh_codes)}")
 
-    bulk_base = pick_bulk_base()
+    bulk_base, toc_ids = discover_base_and_toc()
     print(f"  using bulk base: {bulk_base}")
 
     indicators = C.KEY_INDICATORS[:limit] if limit else C.KEY_INDICATORS
     avail = defaultdict(dict)
     sources = defaultdict(dict)  # iso -> {survey label: latest year seen}
+    diagnosed = False
 
     for ind in indicators:
         key = ind["code"]                                   # stable key for this indicator
@@ -306,10 +318,26 @@ def gather(limit=None):
         for ci, base in enumerate(fetch_codes):
           for period in ind["periodicities"]:
             dataset_id = f"{base}_{period}"
+            if toc_ids is not None and dataset_id not in toc_ids:
+                continue  # not a real ILOSTAT dataset (e.g. this indicator has no such periodicity)
             url = f"{bulk_base}/{dataset_id}.csv.gz"
             print(f"  fetching {dataset_id} ...", flush=True)
             try:
-                rows = _get_csv_rows(url)
+                rows = list(_get_csv_rows(url))
+                # One-time diagnostic: show real columns + example source values,
+                # so the log reveals exactly how to match household-survey sources.
+                if not diagnosed and rows:
+                    cols = list(rows[0].keys())
+                    seen = []
+                    for rr in rows:
+                        sv = (rr.get("source") or rr.get("source.label") or "").strip()
+                        if sv and sv not in seen:
+                            seen.append(sv)
+                        if len(seen) >= 12:
+                            break
+                    print(f"    [diag] columns: {cols}")
+                    print(f"    [diag] sample source values: {seen}")
+                    diagnosed = True
                 n = 0
                 for row in rows:
                     iso = (row.get("ref_area") or "").strip()
@@ -320,13 +348,12 @@ def gather(limit=None):
                     if ci > 0 and key in avail[iso]:
                         continue
                     src = (row.get("source") or "").strip()
-                    # qualify the source: by code (preferred) or by raw label
                     src_code = src.split(":")[0].strip() if src else ""
-                    src_label = labels.get(src_code, src)
-                    if hh_codes:
-                        ok = src_code in hh_codes or is_hh(src_label)
-                    else:
-                        ok = is_hh(src_label)
+                    src_label = labels.get(src_code) or labels.get(src) or \
+                                (row.get("source.label") or "").strip()
+                    # qualify as household survey by code OR by (mapped or raw) label
+                    ok = (src_code in hh_codes) or (src in hh_codes) \
+                         or is_hh(src_label) or is_hh(src)
                     if not ok:
                         continue
                     yr = year_of(row.get("time"))
