@@ -192,21 +192,11 @@ def load_indicator_toc():
     return None
 
 
-def _get_rds_records(url):
-    """Download an ILOSTAT .rds dataset and yield dict rows (uses pyreadr)."""
-    import tempfile
-    import pyreadr  # lazy import: only needed for live data pulls
-    content = _get(url, as_text=False)
-    tmp = tempfile.NamedTemporaryFile(suffix=".rds", delete=False)
-    try:
-        tmp.write(content)
-        tmp.close()
-        result = pyreadr.read_r(tmp.name)
-        df = next(iter(result.values()))          # first (only) data frame
-        for rec in df.to_dict(orient="records"):
-            yield rec
-    finally:
-        os.remove(tmp.name)
+def dataset_url(dataset_id):
+    """rplumber data endpoint returning CSV with codes + labels (type=both)."""
+    frm = CURRENT_YEAR - C.ILOSTAT.get("years_back", 25)
+    return (f"{C.ILOSTAT['data_api']}?id={dataset_id}"
+            f"&type=both&timefrom={frm}&format=.csv")
 
 
 def _get_csv_rows(url):
@@ -223,48 +213,13 @@ def _get_csv_rows(url):
 # --------------------------------------------------------------------------- #
 # Reference data: source labels, country names/regions
 # --------------------------------------------------------------------------- #
-def load_source_labels():
-    """
-    Return {source_code: label} from ILOSTAT's CL_SURVEY code list, plus a set of
-    source codes that qualify as household surveys per config keywords.
-    """
-    labels = {}
-    # Try candidate rplumber source-dictionary endpoints (concept name varies).
-    urls = list(C.ILOSTAT.get("dic_source_urls", []))
-    for u in urls:
-        if not u:
-            continue
-        try:
-            rows = list(_get_csv_rows(u))
-            for row in rows:
-                # find a code-like and label-like column, however it's named
-                keys = list(row.keys())
-                code = (row.get("code") or row.get("source") or row.get("SOURCE")
-                        or row.get("id") or (row.get(keys[0]) if keys else "") or "").strip()
-                label = (row.get("label") or row.get("source.label") or row.get("Label")
-                         or row.get("description") or (row.get(keys[1]) if len(keys) > 1 else "") or "").strip()
-                if code:
-                    labels[code] = label
-            if labels:
-                print(f"  source dictionary loaded from {u} ({len(labels)} codes)")
-                # show a few so we can see the format in the log
-                sample = list(labels.items())[:6]
-                print(f"    sample: {sample}")
-                break
-        except Exception as e:  # noqa: BLE001
-            print(f"  source dictionary not at {u} ({e})", file=sys.stderr)
-    if not labels:
-        print("  ! no source dictionary loaded; will keyword-match raw source values",
-              file=sys.stderr)
-
-    def is_hh(label):
-        l = (label or "").lower()
-        if any(x in l for x in C.SOURCE_EXCLUDE_KEYWORDS):
-            return False
-        return any(x in l for x in C.HOUSEHOLD_SURVEY_KEYWORDS)
-
-    hh_codes = {code for code, label in labels.items() if is_hh(label)}
-    return labels, hh_codes, is_hh
+def is_household_source(label):
+    """True if a source LABEL (e.g. 'Labour force survey') is an included source
+    for this index, per the config keywords."""
+    l = (label or "").lower()
+    if any(x in l for x in C.SOURCE_EXCLUDE_KEYWORDS):
+        return False
+    return any(x in l for x in C.HOUSEHOLD_SURVEY_KEYWORDS)
 
 
 def load_countries():
@@ -307,12 +262,8 @@ def gather(limit=None):
           'recent_years': set(int), # years with a qualifying obs (last decade+)
       }
     """
-    labels, hh_codes, is_hh = load_source_labels()
-    print(f"  household-survey source codes recognised: {len(hh_codes)}")
-
-    data_base = C.ILOSTAT["data_base"]
     toc_ids = load_indicator_toc()
-    print(f"  using data base: {data_base}")
+    print(f"  using data API: {C.ILOSTAT['data_api']}")
 
     indicators = C.KEY_INDICATORS[:limit] if limit else C.KEY_INDICATORS
     avail = defaultdict(dict)
@@ -328,23 +279,23 @@ def gather(limit=None):
             dataset_id = f"{base}_{period}"
             if toc_ids is not None and dataset_id not in toc_ids:
                 continue  # not a real ILOSTAT dataset (e.g. this indicator has no such periodicity)
-            url = f"{data_base}/{dataset_id}.rds"
+            url = dataset_url(dataset_id)
             print(f"  fetching {dataset_id} ...", flush=True)
             try:
-                rows = list(_get_rds_records(url))
-                # One-time diagnostic: show real columns + example source values,
-                # so the log reveals exactly how to match household-survey sources.
+                rows = list(_get_csv_rows(url))
+                # One-time diagnostic: show real columns + example source labels.
                 if not diagnosed and rows:
                     cols = list(rows[0].keys())
                     seen = []
                     for rr in rows:
-                        sv = (rr.get("source") or rr.get("source.label") or "").strip()
+                        sv = (rr.get("source.label") or rr.get("source_label")
+                              or rr.get("source") or "").strip()
                         if sv and sv not in seen:
                             seen.append(sv)
                         if len(seen) >= 12:
                             break
                     print(f"    [diag] columns: {cols}")
-                    print(f"    [diag] sample source values: {seen}")
+                    print(f"    [diag] sample source labels: {seen}")
                     diagnosed = True
                 n = 0
                 for row in rows:
@@ -355,21 +306,17 @@ def gather(limit=None):
                     # populated this indicator for the country, ignore later codes
                     if ci > 0 and key in avail[iso]:
                         continue
-                    src = ("" if row.get("source") is None else str(row.get("source"))).strip()
-                    if src.lower() == "nan":
-                        src = ""
-                    src_code = src.split(":")[0].strip() if src else ""
-                    src_label = labels.get(src_code) or labels.get(src) or \
-                                (row.get("source.label") or "").strip()
-                    # qualify as household survey by code OR by (mapped or raw) label
-                    ok = (src_code in hh_codes) or (src in hh_codes) \
-                         or is_hh(src_label) or is_hh(src)
-                    if not ok:
+                    src_label = (row.get("source.label") or row.get("source_label") or "").strip()
+                    if not src_label:
+                        src_label = ("" if row.get("source") is None else str(row.get("source"))).strip()
+                    if src_label.lower() == "nan":
+                        src_label = ""
+                    if not is_household_source(src_label):
                         continue
                     yr = year_of(row.get("time"))
                     if yr is None:
                         continue
-                    lbl = (src_label or src_code or "").strip()
+                    lbl = src_label
                     if lbl and (lbl not in sources[iso] or yr > sources[iso][lbl]):
                         sources[iso][lbl] = yr
                     rec = avail[iso].get(key)

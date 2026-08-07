@@ -153,20 +153,15 @@ SCORING = {
 # ILOSTAT endpoints
 # ------------------------------------------------------------------------------
 ILOSTAT = {
-    # ILO retired the old WEB_bulk_download CSV facility. Data + metadata are now
-    # served by the rplumber API. Per-indicator datasets are R .rds files at
-    #   https://rplumber.ilo.org/files/indicator/{id}.rds
-    # and the list of valid ids is in the indicator table of contents.
-    "data_base": "https://rplumber.ilo.org/files/indicator",
+    # ILOSTAT is served by the rplumber API. The data endpoint returns CSV
+    # directly, and with type=both it includes source LABELS (so we can identify
+    # household surveys without a separate dictionary):
+    #   https://rplumber.ilo.org/data/indicator?id={id}&type=both&format=.csv
+    "data_api": "https://rplumber.ilo.org/data/indicator",
     "toc_indicator": "https://rplumber.ilo.org/metadata/toc/indicator/?lang=en",
     "toc_ref_area":  "https://rplumber.ilo.org/metadata/toc/ref_area/?lang=en",
-    # Source dictionary (which sources are surveys / census / admin). Try a few
-    # candidate concept names; the pipeline uses the first that loads.
-    "dic_source_urls": [
-        "https://rplumber.ilo.org/metadata/dic/source/?lang=en",
-        "https://rplumber.ilo.org/metadata/dic/SOURCE/?lang=en",
-        "https://rplumber.ilo.org/metadata/dic/CL_SURVEY/?lang=en",
-    ],
+    # Only request data from this many years back (keeps downloads small).
+    "years_back": 25,
     # Don't overwrite the published site unless at least this many countries were
     # scored (protects the live site if ILOSTAT is unreachable or a URL changes).
     "min_countries": 30,
