@@ -175,26 +175,38 @@ def _get(url, as_text=True):
     return r.text if as_text else r.content
 
 
-def discover_base_and_toc():
-    """Pick the bulk base by which one actually serves the table of contents,
-    and return (base_url, set_of_valid_dataset_ids | None)."""
-    bases = C.ILOSTAT.get("bulk_bases") or [C.ILOSTAT.get("bulk_base")]
-    for b in bases:
-        for toc_name in ("table_of_contents_en.csv", "table_of_contents.csv"):
-            try:
-                rows = list(_get_csv_rows(f"{b}/{toc_name}"))
-                ids = set()
-                for r in rows:
-                    i = (r.get("id") or r.get("ID") or r.get("indicator") or "").strip()
-                    if i:
-                        ids.add(i)
-                if ids:
-                    print(f"  table of contents loaded from {b}/{toc_name} ({len(ids)} datasets)")
-                    return b, ids
-            except Exception as e:  # noqa: BLE001
-                print(f"  toc not at {b}/{toc_name} ({e})")
-    print("  ! no table of contents found; will attempt downloads directly")
-    return bases[0], None
+def load_indicator_toc():
+    """Return the set of valid dataset ids from the rplumber indicator toc."""
+    try:
+        rows = list(_get_csv_rows(C.ILOSTAT["toc_indicator"]))
+        ids = set()
+        for r in rows:
+            i = (r.get("id") or r.get("ID") or r.get("indicator") or "").strip()
+            if i:
+                ids.add(i)
+        if ids:
+            print(f"  indicator table of contents loaded ({len(ids)} datasets)")
+            return ids
+    except Exception as e:  # noqa: BLE001
+        print(f"  ! could not load indicator toc ({e}); will attempt downloads directly")
+    return None
+
+
+def _get_rds_records(url):
+    """Download an ILOSTAT .rds dataset and yield dict rows (uses pyreadr)."""
+    import tempfile
+    import pyreadr  # lazy import: only needed for live data pulls
+    content = _get(url, as_text=False)
+    tmp = tempfile.NamedTemporaryFile(suffix=".rds", delete=False)
+    try:
+        tmp.write(content)
+        tmp.close()
+        result = pyreadr.read_r(tmp.name)
+        df = next(iter(result.values()))          # first (only) data frame
+        for rec in df.to_dict(orient="records"):
+            yield rec
+    finally:
+        os.remove(tmp.name)
 
 
 def _get_csv_rows(url):
@@ -217,13 +229,8 @@ def load_source_labels():
     source codes that qualify as household surveys per config keywords.
     """
     labels = {}
-    # Try many candidate locations/filenames for the source dictionary, since
-    # ILOSTAT's exact path/columns have changed over time.
-    urls = []
-    for b in C.ILOSTAT.get("dic_bases", []):
-        urls += [f"{b}/source_en.csv", f"{b}/CL_SURVEY_en.csv",
-                 f"{b}/CL_SOURCE_en.csv", f"{b}/survey_en.csv"]
-    urls.append(C.ILOSTAT.get("codelist_survey"))
+    # Try candidate rplumber source-dictionary endpoints (concept name varies).
+    urls = list(C.ILOSTAT.get("dic_source_urls", []))
     for u in urls:
         if not u:
             continue
@@ -303,8 +310,9 @@ def gather(limit=None):
     labels, hh_codes, is_hh = load_source_labels()
     print(f"  household-survey source codes recognised: {len(hh_codes)}")
 
-    bulk_base, toc_ids = discover_base_and_toc()
-    print(f"  using bulk base: {bulk_base}")
+    data_base = C.ILOSTAT["data_base"]
+    toc_ids = load_indicator_toc()
+    print(f"  using data base: {data_base}")
 
     indicators = C.KEY_INDICATORS[:limit] if limit else C.KEY_INDICATORS
     avail = defaultdict(dict)
@@ -320,10 +328,10 @@ def gather(limit=None):
             dataset_id = f"{base}_{period}"
             if toc_ids is not None and dataset_id not in toc_ids:
                 continue  # not a real ILOSTAT dataset (e.g. this indicator has no such periodicity)
-            url = f"{bulk_base}/{dataset_id}.csv.gz"
+            url = f"{data_base}/{dataset_id}.rds"
             print(f"  fetching {dataset_id} ...", flush=True)
             try:
-                rows = list(_get_csv_rows(url))
+                rows = list(_get_rds_records(url))
                 # One-time diagnostic: show real columns + example source values,
                 # so the log reveals exactly how to match household-survey sources.
                 if not diagnosed and rows:
@@ -340,14 +348,16 @@ def gather(limit=None):
                     diagnosed = True
                 n = 0
                 for row in rows:
-                    iso = (row.get("ref_area") or "").strip()
-                    if not iso or len(iso) != 3:
+                    iso = ("" if row.get("ref_area") is None else str(row.get("ref_area"))).strip()
+                    if len(iso) != 3 or not iso.isalpha() or not iso.isupper():
                         continue
                     # fallback preference: if a higher-priority code already
                     # populated this indicator for the country, ignore later codes
                     if ci > 0 and key in avail[iso]:
                         continue
-                    src = (row.get("source") or "").strip()
+                    src = ("" if row.get("source") is None else str(row.get("source"))).strip()
+                    if src.lower() == "nan":
+                        src = ""
                     src_code = src.split(":")[0].strip() if src else ""
                     src_label = labels.get(src_code) or labels.get(src) or \
                                 (row.get("source.label") or "").strip()
