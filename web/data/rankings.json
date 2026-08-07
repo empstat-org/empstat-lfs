@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07 12:29",
+  "generated": "2026-08-07 12:46",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -146,7 +146,7 @@
     {
       "iso3": "ALB",
       "country": "Albania",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 81.4,
       "frequency": 87.5,
       "recency": 90.9,
@@ -286,7 +286,7 @@
     {
       "iso3": "ARG",
       "country": "Argentina",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 92.5,
       "recency": 100.0,
@@ -426,7 +426,7 @@
     {
       "iso3": "ARM",
       "country": "Armenia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 95.0,
       "recency": 90.9,
@@ -566,7 +566,7 @@
     {
       "iso3": "AUS",
       "country": "Australia",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 78.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -715,7 +715,7 @@
     {
       "iso3": "AUT",
       "country": "Austria",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -859,7 +859,7 @@
     {
       "iso3": "BEL",
       "country": "Belgium",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -1003,7 +1003,7 @@
     {
       "iso3": "BFA",
       "country": "Burkina Faso",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 81.4,
       "frequency": 62.5,
       "recency": 100.0,
@@ -1143,7 +1143,7 @@
     {
       "iso3": "BGD",
       "country": "Bangladesh",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 67.5,
       "recency": 90.9,
@@ -1279,7 +1279,7 @@
     {
       "iso3": "BGR",
       "country": "Bulgaria",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -1423,7 +1423,7 @@
     {
       "iso3": "BIH",
       "country": "Bosnia and Herzegovina",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 83.1,
       "frequency": 92.5,
       "recency": 100.0,
@@ -1563,7 +1563,7 @@
     {
       "iso3": "BLZ",
       "country": "Belize",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 78.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -1699,7 +1699,7 @@
     {
       "iso3": "BRB",
       "country": "Barbados",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 78.0,
       "frequency": 90.0,
       "recency": 90.9,
@@ -1839,7 +1839,7 @@
     {
       "iso3": "BTN",
       "country": "Bhutan",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 78.0,
       "frequency": 82.5,
       "recency": 100.0,
@@ -1975,7 +1975,7 @@
     {
       "iso3": "BWA",
       "country": "Botswana",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 72.5,
       "recency": 90.9,
@@ -2115,7 +2115,7 @@
     {
       "iso3": "CAN",
       "country": "Canada",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 74.6,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2251,7 +2251,7 @@
     {
       "iso3": "CHE",
       "country": "Switzerland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2395,7 +2395,7 @@
     {
       "iso3": "COL",
       "country": "Colombia",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2535,7 +2535,7 @@
     {
       "iso3": "CYP",
       "country": "Cyprus",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2679,7 +2679,7 @@
     {
       "iso3": "DEU",
       "country": "Germany",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2823,7 +2823,7 @@
     {
       "iso3": "DNK",
       "country": "Denmark",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -2967,7 +2967,7 @@
     {
       "iso3": "DOM",
       "country": "Dominican Republic",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -3107,7 +3107,7 @@
     {
       "iso3": "ESP",
       "country": "Spain",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -3251,7 +3251,7 @@
     {
       "iso3": "EST",
       "country": "Estonia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -3395,7 +3395,7 @@
     {
       "iso3": "FIN",
       "country": "Finland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -3539,7 +3539,7 @@
     {
       "iso3": "GBR",
       "country": "United Kingdom of Great Britain and Northern Ireland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -3699,7 +3699,7 @@
     {
       "iso3": "GEO",
       "country": "Georgia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 83.1,
       "frequency": 87.5,
       "recency": 90.9,
@@ -3839,7 +3839,7 @@
     {
       "iso3": "GHA",
       "country": "Ghana",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 62.5,
       "recency": 90.9,
@@ -3983,7 +3983,7 @@
     {
       "iso3": "GMB",
       "country": "Gambia",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 62.5,
       "recency": 100.0,
@@ -4119,7 +4119,7 @@
     {
       "iso3": "GRC",
       "country": "Greece",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -4263,7 +4263,7 @@
     {
       "iso3": "GRD",
       "country": "Grenada",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 79.7,
       "frequency": 72.5,
       "recency": 90.9,
@@ -4399,7 +4399,7 @@
     {
       "iso3": "GUY",
       "country": "Guyana",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 67.5,
       "recency": 63.6,
@@ -4535,7 +4535,7 @@
     {
       "iso3": "HRV",
       "country": "Croatia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -4679,7 +4679,7 @@
     {
       "iso3": "HUN",
       "country": "Hungary",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -4823,7 +4823,7 @@
     {
       "iso3": "IDN",
       "country": "Indonesia",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 82.5,
       "recency": 81.8,
@@ -4979,7 +4979,7 @@
     {
       "iso3": "IND",
       "country": "India",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 79.7,
       "frequency": 87.5,
       "recency": 100.0,
@@ -5126,7 +5126,7 @@
     {
       "iso3": "IRL",
       "country": "Ireland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -5270,7 +5270,7 @@
     {
       "iso3": "IRN",
       "country": "Iran, Islamic Republic of",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 74.6,
       "frequency": 95.0,
       "recency": 90.9,
@@ -5406,7 +5406,7 @@
     {
       "iso3": "ISL",
       "country": "Iceland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -5550,7 +5550,7 @@
     {
       "iso3": "ISR",
       "country": "Israel",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 78.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -5686,7 +5686,7 @@
     {
       "iso3": "ITA",
       "country": "Italy",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -5830,7 +5830,7 @@
     {
       "iso3": "JAM",
       "country": "Jamaica",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 90.0,
       "recency": 81.8,
@@ -5986,7 +5986,7 @@
     {
       "iso3": "JPN",
       "country": "Japan",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 71.2,
       "frequency": 100.0,
       "recency": 100.0,
@@ -6122,7 +6122,7 @@
     {
       "iso3": "KEN",
       "country": "Kenya",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 57.5,
       "recency": 63.6,
@@ -6420,7 +6420,7 @@
     {
       "iso3": "LCA",
       "country": "Saint Lucia",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 79.7,
       "frequency": 100.0,
       "recency": 100.0,
@@ -6560,7 +6560,7 @@
     {
       "iso3": "LKA",
       "country": "Sri Lanka",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 95.0,
       "recency": 90.9,
@@ -6696,7 +6696,7 @@
     {
       "iso3": "LTU",
       "country": "Lithuania",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -6840,7 +6840,7 @@
     {
       "iso3": "LUX",
       "country": "Luxembourg",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -6984,7 +6984,7 @@
     {
       "iso3": "LVA",
       "country": "Latvia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -7128,7 +7128,7 @@
     {
       "iso3": "MDA",
       "country": "Republic of Moldova",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -7264,7 +7264,7 @@
     {
       "iso3": "MKD",
       "country": "North Macedonia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 83.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -7400,7 +7400,7 @@
     {
       "iso3": "MLT",
       "country": "Malta",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 78.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -7540,7 +7540,7 @@
     {
       "iso3": "MMR",
       "country": "Myanmar",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 62.5,
       "recency": 54.5,
@@ -7676,7 +7676,7 @@
     {
       "iso3": "MNE",
       "country": "Montenegro",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 78.0,
       "frequency": 95.0,
       "recency": 90.9,
@@ -7812,7 +7812,7 @@
     {
       "iso3": "MNG",
       "country": "Mongolia",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 92.5,
       "recency": 100.0,
@@ -7952,7 +7952,7 @@
     {
       "iso3": "MUS",
       "country": "Mauritius",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 79.7,
       "frequency": 95.0,
       "recency": 90.9,
@@ -8088,7 +8088,7 @@
     {
       "iso3": "MYS",
       "country": "Malaysia",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 71.2,
       "frequency": 85.0,
       "recency": 72.7,
@@ -8224,7 +8224,7 @@
     {
       "iso3": "NIC",
       "country": "Nicaragua",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 57.5,
       "recency": 36.4,
@@ -8364,7 +8364,7 @@
     {
       "iso3": "NLD",
       "country": "Netherlands",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -8508,7 +8508,7 @@
     {
       "iso3": "NOR",
       "country": "Norway",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -8652,7 +8652,7 @@
     {
       "iso3": "NZL",
       "country": "New Zealand",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 66.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -8788,7 +8788,7 @@
     {
       "iso3": "PAK",
       "country": "Pakistan",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 77.5,
       "recency": 100.0,
@@ -8928,7 +8928,7 @@
     {
       "iso3": "PER",
       "country": "Peru",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 86.4,
       "frequency": 72.5,
       "recency": 63.6,
@@ -9064,7 +9064,7 @@
     {
       "iso3": "PHL",
       "country": "Philippines",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 78.0,
       "frequency": 95.0,
       "recency": 90.9,
@@ -9223,7 +9223,7 @@
     {
       "iso3": "POL",
       "country": "Poland",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -9371,7 +9371,7 @@
     {
       "iso3": "PRT",
       "country": "Portugal",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -9515,7 +9515,7 @@
     {
       "iso3": "PRY",
       "country": "Paraguay",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 97.5,
       "recency": 100.0,
@@ -9655,7 +9655,7 @@
     {
       "iso3": "PSE",
       "country": "Palestine, State of",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 86.4,
       "frequency": 92.5,
       "recency": 100.0,
@@ -9791,7 +9791,7 @@
     {
       "iso3": "ROU",
       "country": "Romania",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -9935,7 +9935,7 @@
     {
       "iso3": "RUS",
       "country": "Russian Federation",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 83.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -10071,7 +10071,7 @@
     {
       "iso3": "RWA",
       "country": "Rwanda",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 87.5,
       "recency": 100.0,
@@ -10211,7 +10211,7 @@
     {
       "iso3": "SAU",
       "country": "Saudi Arabia",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 52.5,
       "frequency": 100.0,
       "recency": 100.0,
@@ -10347,7 +10347,7 @@
     {
       "iso3": "SGP",
       "country": "Singapore",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 74.6,
       "frequency": 100.0,
       "recency": 100.0,
@@ -10483,7 +10483,7 @@
     {
       "iso3": "SRB",
       "country": "Serbia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 92.5,
       "recency": 100.0,
@@ -10627,7 +10627,7 @@
     {
       "iso3": "SVK",
       "country": "Slovakia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -10771,7 +10771,7 @@
     {
       "iso3": "SVN",
       "country": "Slovenia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -10915,7 +10915,7 @@
     {
       "iso3": "SWE",
       "country": "Sweden",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -11059,7 +11059,7 @@
     {
       "iso3": "SYC",
       "country": "Seychelles",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 87.5,
       "recency": 100.0,
@@ -11195,7 +11195,7 @@
     {
       "iso3": "SYR",
       "country": "Syrian Arab Republic",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 44.1,
       "frequency": 50.0,
       "recency": 0.0,
@@ -11335,7 +11335,7 @@
     {
       "iso3": "THA",
       "country": "Thailand",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 81.4,
       "frequency": 92.5,
       "recency": 100.0,
@@ -11475,7 +11475,7 @@
     {
       "iso3": "TUR",
       "country": "Türkiye",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 86.4,
       "frequency": 100.0,
       "recency": 100.0,
@@ -11755,7 +11755,7 @@
     {
       "iso3": "TZA",
       "country": "Tanzania, United Republic of",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 52.5,
       "recency": 90.9,
@@ -11891,7 +11891,7 @@
     {
       "iso3": "UKR",
       "country": "Ukraine",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 78.0,
       "frequency": 80.0,
       "recency": 63.6,
@@ -12027,7 +12027,7 @@
     {
       "iso3": "URY",
       "country": "Uruguay",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -12163,7 +12163,7 @@
     {
       "iso3": "VNM",
       "country": "Viet Nam",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 87.5,
       "recency": 90.9,
@@ -12299,7 +12299,7 @@
     {
       "iso3": "YEM",
       "country": "Yemen",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 83.1,
       "frequency": 42.5,
       "recency": 0.0,
@@ -12439,7 +12439,7 @@
     {
       "iso3": "ZAF",
       "country": "South Africa",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 100.0,
       "recency": 100.0,
@@ -12588,7 +12588,7 @@
     {
       "iso3": "ZMB",
       "country": "Zambia",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 82.5,
       "recency": 90.9,
@@ -12728,7 +12728,7 @@
     {
       "iso3": "ZWE",
       "country": "Zimbabwe",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 72.5,
       "recency": 100.0,
@@ -13000,7 +13000,7 @@
     {
       "iso3": "AFG",
       "country": "Afghanistan",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 63.6,
@@ -13140,7 +13140,7 @@
     {
       "iso3": "AND",
       "country": "Andorra",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -13412,7 +13412,7 @@
     {
       "iso3": "ARE",
       "country": "United Arab Emirates",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 74.6,
       "frequency": 75.0,
       "recency": 90.9,
@@ -13548,7 +13548,7 @@
     {
       "iso3": "ATG",
       "country": "Antigua and Barbuda",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 78.0,
       "frequency": 40.0,
       "recency": 81.8,
@@ -13684,7 +13684,7 @@
     {
       "iso3": "AZE",
       "country": "Azerbaijan",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 64.4,
       "frequency": 85.0,
       "recency": 72.7,
@@ -13820,7 +13820,7 @@
     {
       "iso3": "BDI",
       "country": "Burundi",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 54.5,
@@ -13956,7 +13956,7 @@
     {
       "iso3": "BEN",
       "country": "Benin",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 72.7,
@@ -14096,7 +14096,7 @@
     {
       "iso3": "BHR",
       "country": "Bahrain",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -14232,7 +14232,7 @@
     {
       "iso3": "BHS",
       "country": "Bahamas",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 79.7,
       "frequency": 55.0,
       "recency": 81.8,
@@ -14368,7 +14368,7 @@
     {
       "iso3": "BLR",
       "country": "Belarus",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 78.0,
       "frequency": 75.0,
       "recency": 90.9,
@@ -14640,7 +14640,7 @@
     {
       "iso3": "BOL",
       "country": "Bolivia, Plurinational State of",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 90.9,
@@ -14784,7 +14784,7 @@
     {
       "iso3": "BRN",
       "country": "Brunei Darussalam",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 70.0,
       "recency": 90.9,
@@ -14920,7 +14920,7 @@
     {
       "iso3": "CIV",
       "country": "Côte d'Ivoire",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 78.0,
       "frequency": 35.0,
       "recency": 72.7,
@@ -15056,7 +15056,7 @@
     {
       "iso3": "CMR",
       "country": "Cameroon",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 78.0,
       "frequency": 35.0,
       "recency": 63.6,
@@ -15192,7 +15192,7 @@
     {
       "iso3": "COD",
       "country": "Congo, Democratic Republic of the",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 79.7,
       "frequency": 30.0,
       "recency": 0.0,
@@ -15468,7 +15468,7 @@
     {
       "iso3": "COM",
       "country": "Comoros",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -15604,7 +15604,7 @@
     {
       "iso3": "CRI",
       "country": "Costa Rica",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 6.8,
       "frequency": 30.0,
       "recency": 100.0,
@@ -16016,7 +16016,7 @@
     {
       "iso3": "DJI",
       "country": "Djibouti",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 81.4,
       "frequency": 35.0,
       "recency": 27.3,
@@ -16288,7 +16288,7 @@
     {
       "iso3": "FSM",
       "country": "Micronesia, Federated States of",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 71.2,
       "frequency": 30.0,
       "recency": 0.0,
@@ -16424,7 +16424,7 @@
     {
       "iso3": "GNB",
       "country": "Guinea-Bissau",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 81.4,
       "frequency": 40.0,
       "recency": 72.7,
@@ -16560,7 +16560,7 @@
     {
       "iso3": "GTM",
       "country": "Guatemala",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 86.4,
       "frequency": 35.0,
       "recency": 81.8,
@@ -16972,7 +16972,7 @@
     {
       "iso3": "HND",
       "country": "Honduras",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 86.4,
       "frequency": 80.0,
       "recency": 100.0,
@@ -17108,7 +17108,7 @@
     {
       "iso3": "IRQ",
       "country": "Iraq",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 63.6,
@@ -17248,7 +17248,7 @@
     {
       "iso3": "KHM",
       "country": "Cambodia",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 60.0,
       "recency": 81.8,
@@ -17388,7 +17388,7 @@
     {
       "iso3": "KIR",
       "country": "Kiribati",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 81.8,
@@ -17524,7 +17524,7 @@
     {
       "iso3": "LAO",
       "country": "Lao People's Democratic Republic",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 72.7,
@@ -17664,7 +17664,7 @@
     {
       "iso3": "LBN",
       "country": "Lebanon",
-      "region": "Other",
+      "region": "Arab States",
       "coverage": 83.1,
       "frequency": 35.0,
       "recency": 45.5,
@@ -17804,7 +17804,7 @@
     {
       "iso3": "LBR",
       "country": "Liberia",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 27.3,
@@ -17944,7 +17944,7 @@
     {
       "iso3": "LBY",
       "country": "Libya",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 52.5,
       "frequency": 30.0,
       "recency": 0.0,
@@ -18080,7 +18080,7 @@
     {
       "iso3": "LSO",
       "country": "Lesotho",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 90.9,
@@ -18216,7 +18216,7 @@
     {
       "iso3": "MDG",
       "country": "Madagascar",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 35.0,
       "recency": 72.7,
@@ -18356,7 +18356,7 @@
     {
       "iso3": "MDV",
       "country": "Maldives",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 45.5,
@@ -18492,7 +18492,7 @@
     {
       "iso3": "MHL",
       "country": "Marshall Islands",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 35.0,
       "recency": 45.5,
@@ -18628,7 +18628,7 @@
     {
       "iso3": "MLI",
       "country": "Mali",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 67.8,
       "frequency": 35.0,
       "recency": 72.7,
@@ -18900,7 +18900,7 @@
     {
       "iso3": "MOZ",
       "country": "Mozambique",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -19040,7 +19040,7 @@
     {
       "iso3": "MRT",
       "country": "Mauritania",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 74.6,
       "frequency": 35.0,
       "recency": 45.5,
@@ -19312,7 +19312,7 @@
     {
       "iso3": "MWI",
       "country": "Malawi",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 90.9,
@@ -19452,7 +19452,7 @@
     {
       "iso3": "NAM",
       "country": "Namibia",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 36.4,
@@ -19728,7 +19728,7 @@
     {
       "iso3": "NER",
       "country": "Niger",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 81.4,
       "frequency": 40.0,
       "recency": 72.7,
@@ -19868,7 +19868,7 @@
     {
       "iso3": "NGA",
       "country": "Nigeria",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 78.0,
       "frequency": 40.0,
       "recency": 90.9,
@@ -20158,7 +20158,7 @@
     {
       "iso3": "NPL",
       "country": "Nepal",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 35.0,
       "recency": 27.3,
@@ -20438,7 +20438,7 @@
     {
       "iso3": "PAN",
       "country": "Panama",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 78.0,
       "frequency": 35.0,
       "recency": 72.7,
@@ -20582,7 +20582,7 @@
     {
       "iso3": "PLW",
       "country": "Palau",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 35.0,
       "recency": 81.8,
@@ -20718,7 +20718,7 @@
     {
       "iso3": "PNG",
       "country": "Papua New Guinea",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -21126,7 +21126,7 @@
     {
       "iso3": "SEN",
       "country": "Senegal",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -21262,7 +21262,7 @@
     {
       "iso3": "SLB",
       "country": "Solomon Islands",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 71.2,
       "frequency": 30.0,
       "recency": 0.0,
@@ -21398,7 +21398,7 @@
     {
       "iso3": "SLE",
       "country": "Sierra Leone",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 35.0,
       "recency": 36.4,
@@ -21538,7 +21538,7 @@
     {
       "iso3": "SLV",
       "country": "El Salvador",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 83.1,
       "frequency": 80.0,
       "recency": 100.0,
@@ -21678,7 +21678,7 @@
     {
       "iso3": "SOM",
       "country": "Somalia",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 72.7,
@@ -21818,7 +21818,7 @@
     {
       "iso3": "SUR",
       "country": "Suriname",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 78.0,
       "frequency": 35.0,
       "recency": 18.2,
@@ -21958,7 +21958,7 @@
     {
       "iso3": "SWZ",
       "country": "Eswatini",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 81.8,
@@ -22230,7 +22230,7 @@
     {
       "iso3": "TCD",
       "country": "Chad",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 74.6,
       "frequency": 40.0,
       "recency": 72.7,
@@ -22366,7 +22366,7 @@
     {
       "iso3": "TGO",
       "country": "Togo",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 81.4,
       "frequency": 40.0,
       "recency": 72.7,
@@ -22502,7 +22502,7 @@
     {
       "iso3": "TJK",
       "country": "Tajikistan",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 83.1,
       "frequency": 45.0,
       "recency": 36.4,
@@ -22778,7 +22778,7 @@
     {
       "iso3": "TLS",
       "country": "Timor-Leste",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 40.0,
       "recency": 63.6,
@@ -22918,7 +22918,7 @@
     {
       "iso3": "TON",
       "country": "Tonga",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 50.0,
       "recency": 81.8,
@@ -23058,7 +23058,7 @@
     {
       "iso3": "TUV",
       "country": "Tuvalu",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 71.2,
       "frequency": 35.0,
       "recency": 18.2,
@@ -23194,7 +23194,7 @@
     {
       "iso3": "UGA",
       "country": "Uganda",
-      "region": "Other",
+      "region": "Africa",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 63.6,
@@ -23334,7 +23334,7 @@
     {
       "iso3": "UZB",
       "country": "Uzbekistan",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 69.5,
       "frequency": 55.0,
       "recency": 54.5,
@@ -23474,7 +23474,7 @@
     {
       "iso3": "VUT",
       "country": "Vanuatu",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 83.1,
       "frequency": 40.0,
       "recency": 100.0,
@@ -23750,7 +23750,7 @@
     {
       "iso3": "WSM",
       "country": "Samoa",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 86.4,
       "frequency": 45.0,
       "recency": 72.7,
@@ -24026,7 +24026,7 @@
     {
       "iso3": "HTI",
       "country": "Haiti",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 47.5,
       "frequency": 30.0,
       "recency": 0.0,
@@ -24162,7 +24162,7 @@
     {
       "iso3": "TTO",
       "country": "Trinidad and Tobago",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 0.0,
       "frequency": 30.0,
       "recency": 0.0,
@@ -24298,7 +24298,7 @@
     {
       "iso3": "CZE",
       "country": "Czechia",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 22.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -24438,7 +24438,7 @@
     {
       "iso3": "FRA",
       "country": "France",
-      "region": "Other",
+      "region": "Europe and Central Asia",
       "coverage": 22.0,
       "frequency": 100.0,
       "recency": 100.0,
@@ -24578,7 +24578,7 @@
     {
       "iso3": "CHN",
       "country": "China",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 6.8,
       "frequency": 60.0,
       "recency": 54.5,
@@ -24714,7 +24714,7 @@
     {
       "iso3": "CHL",
       "country": "Chile",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 3.4,
       "frequency": 30.0,
       "recency": 72.7,
@@ -24908,7 +24908,7 @@
     {
       "iso3": "ECU",
       "country": "Ecuador",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 3.4,
       "frequency": 15.0,
       "recency": 0.0,
@@ -25044,7 +25044,7 @@
     {
       "iso3": "MEX",
       "country": "Mexico",
-      "region": "Other",
+      "region": "Americas",
       "coverage": 3.4,
       "frequency": 15.0,
       "recency": 90.9,
