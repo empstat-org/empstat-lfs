@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFS Coverage Index — labour force survey data in ILOSTAT</title>
+<style>
+  :root{
+    --brand:#1a5bad; --brand-dark:#123f83; --brand-light:#e7effb;
+    --ink:#1b2536; --muted:#5c6d85; --line:#e3e9f1; --bg:#f6f8fc; --card:#fff;
+    --good:#1c9463; --mid:#e3ad0a; --low:#d55c52;
+    --cov:#1a5bad; --frq:#33a294; --rec:#7e5fd4;
+    --shadow:0 1px 3px rgba(16,32,64,.08),0 6px 24px rgba(16,32,64,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.5}
+  a{color:var(--brand)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  header.top{background:linear-gradient(120deg,var(--brand-dark),var(--brand));color:#fff;padding:34px 0 30px}
+  .backlink{display:inline-flex;align-items:center;gap:5px;color:#d9e6f5;text-decoration:none;
+       font-size:13px;font-weight:600;margin-bottom:16px;opacity:.9}
+  .backlink:hover{opacity:1;text-decoration:underline;color:#fff}
+  header.top h1{margin:0 0 6px;font-size:26px;letter-spacing:-.01em}
+  header.top p{margin:0;max-width:760px;color:#d9e6f5;font-size:15px}
+  .sample-flag{display:inline-block;margin-top:14px;background:#ffce42;color:#473610;
+       font-weight:600;font-size:12.5px;padding:5px 11px;border-radius:20px}
+
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin:-24px auto 0;position:relative}
+  .stat{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:14px 18px;flex:1;min-width:150px}
+  .stat .n{font-size:24px;font-weight:700;color:var(--brand)}
+  .stat .l{font-size:12.5px;color:var(--muted)}
+  .stat{cursor:pointer;transition:box-shadow .12s,transform .12s}
+  .stat:hover{box-shadow:0 2px 6px rgba(16,32,64,.14),0 10px 30px rgba(16,32,64,.10);transform:translateY(-1px)}
+  .stat .l::after{content:" ›";color:var(--brand);font-weight:700}
+  .stat.nolink{cursor:default}
+  .stat.nolink:hover{transform:none;box-shadow:var(--shadow)}
+  .stat.nolink .l::after{content:""}
+  .brk-h{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:18px 0 10px;font-weight:700}
+  .brk-h span{text-transform:none;letter-spacing:0;font-weight:400}
+  .brk-row{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+  .brk-label{flex:1;font-size:13px;color:var(--ink)}
+  .brk-bar{width:120px;height:10px;background:#eff3f9;border-radius:5px;overflow:hidden}
+  .brk-bar>span{display:block;height:100%;border-radius:5px}
+  .brk-n{font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted);width:30px;text-align:right}
+
+  .layout{display:grid;grid-template-columns:288px 1fr;gap:22px;margin:26px auto 60px;align-items:start}
+  @media(max-width:900px){.layout{grid-template-columns:1fr}}
+
+  .panel{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+  .panel h2{font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 14px}
+  .sidebar{position:sticky;top:16px}
+
+  .slider{margin-bottom:16px}
+  .slider .row{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;margin-bottom:5px}
+  .slider .row b{font-weight:600}
+  .slider .val{font-variant-numeric:tabular-nums;color:var(--brand);font-weight:700}
+  .slider input[type=range]{width:100%;accent-color:var(--brand)}
+  .dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  .btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:8px;
+       padding:8px 12px;font-size:13px;cursor:pointer;width:100%}
+  .btn:hover{background:var(--brand-light)}
+  .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .btn.primary:hover{background:var(--brand-dark)}
+  .ctl{display:flex;gap:8px;margin-top:8px}
+
+  .controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;align-items:center}
+  .controls input[type=search],.controls select{
+     padding:9px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;background:#fff}
+  .controls input[type=search]{flex:1;min-width:180px}
+  .count{color:var(--muted);font-size:13px;margin-left:auto}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:10px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);cursor:pointer;user-select:none;position:sticky;top:0;background:var(--card)}
+  th.sorted::after{content:" ▾";color:var(--brand)}
+  th.sorted.asc::after{content:" ▴"}
+  tr.country-row{cursor:pointer}
+  tr.country-row:hover{background:var(--brand-light)}
+  td.rank{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:600;text-align:right;width:38px}
+  td.name{white-space:normal;min-width:150px;font-weight:600}
+  td.region{color:var(--muted);font-size:12.5px;white-space:normal}
+  .medal{margin-right:4px}
+
+  .scorecell{min-width:132px}
+  .bar{position:relative;height:18px;background:#eff3f9;border-radius:5px;overflow:hidden}
+  .bar>span{position:absolute;left:0;top:0;bottom:0;border-radius:5px}
+  .bar em{position:absolute;right:6px;top:0;font-style:normal;font-size:11.5px;font-weight:700;
+          line-height:18px;color:#143560}
+  .mini{display:inline-block;width:34px;text-align:right;font-variant-numeric:tabular-nums}
+  .subbars{display:flex;gap:3px;align-items:center}
+  .sb{height:8px;border-radius:3px;min-width:2px}
+
+  .pill{font-size:11px;font-weight:700;padding:2px 7px;border-radius:20px;color:#fff}
+  .pend{display:inline-block;font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:20px;
+        background:#fff4d6;color:#8a5a00;border:1px solid #f0d489;margin-left:5px;white-space:nowrap}
+  .pending-box{background:#fff9ec;border:1px solid #f0d489;border-radius:10px;padding:12px 14px;margin:0 0 16px}
+  .pending-box .h{font-weight:700;color:#8a5a00;font-size:13.5px;margin-bottom:4px}
+  .pending-box .periods{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+  .pending-box .p{font-size:11px;font-weight:600;background:#fff;border:1px solid #f0d489;color:#8a5a00;border-radius:5px;padding:2px 6px}
+  .pending-box .src{font-size:12px;color:var(--muted)}
+  .uptodate{font-size:12.5px;color:var(--good);font-weight:600;margin:0 0 14px}
+  .srcline{font-size:13px;color:var(--ink);margin:0 0 14px}
+  .chk{display:flex;align-items:center;gap:6px;font-size:13.5px;color:var(--ink);cursor:pointer;user-select:none}
+  .chk input{accent-color:var(--brand)}
+
+  /* detail drawer */
+  .overlay{position:fixed;inset:0;background:rgba(12,24,48,.45);display:none;z-index:40}
+  .overlay.open{display:block}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(560px,94vw);background:#fff;
+          box-shadow:-8px 0 40px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .22s ease;
+          z-index:50;display:flex;flex-direction:column}
+  .drawer.open{transform:translateX(0)}
+  .drawer header{background:var(--brand);color:#fff;padding:20px 22px}
+  .drawer header h3{margin:0;font-size:20px}
+  .drawer header .sub{color:#d2e2f4;font-size:13px;margin-top:3px}
+  .drawer .close{position:absolute;top:16px;right:18px;background:transparent;border:0;color:#fff;font-size:24px;cursor:pointer}
+  .drawer .body{padding:20px 22px;overflow:auto}
+  .kpis{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+  .kpi{flex:1;min-width:90px;background:var(--bg);border-radius:10px;padding:10px 12px}
+  .kpi .n{font-size:20px;font-weight:700}
+  .kpi .l{font-size:11.5px;color:var(--muted)}
+  .igrid{width:100%;border-collapse:collapse;font-size:13px}
+  .igrid td{padding:7px 8px;border-bottom:1px solid var(--line);white-space:normal}
+  .igrid .st{width:20px;text-align:center}
+  .yes{color:var(--good);font-weight:700}
+  .no{color:#c4ced9;font-weight:700}
+  .tag{font-size:10.5px;font-weight:700;padding:1px 6px;border-radius:5px;background:#eff3f9;color:var(--muted)}
+  .tier2 td:first-child{padding-left:8px}
+
+  .method{margin-top:22px}
+  .method details{border:1px solid var(--line);border-radius:10px;padding:0 16px;margin-bottom:10px;background:#fff}
+  .method summary{cursor:pointer;font-weight:600;padding:14px 0}
+  .method p,.method li{font-size:14px;color:#354351}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;padding:24px 0 40px}
+  footer .credit{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+  footer .credit a{text-decoration:none}
+  footer .credit a:hover{text-decoration:underline}
+  footer .cite{max-width:760px;margin:0 auto 12px;font-size:12px;color:var(--muted);font-style:italic}
+  code{background:#eff3f9;padding:1px 5px;border-radius:4px;font-size:12.5px}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="backlink" href="https://empstat.org">&larr; empstat.org</a>
+    <a class="backlink" href="https://census.empstat.org" style="margin-left:14px">Census Coverage Index &rarr;</a>
+    <a class="backlink" href="https://admin.empstat.org" style="margin-left:14px">Administrative Data Index &rarr;</a>
+    <a class="backlink" href="about.html" style="margin-left:14px">About &amp; methodology</a>
+    <h1>LFS Coverage Index</h1>
+    <p>Ranking of countries by how well they are covered by labour force survey data* in ILOSTAT.
+       Countries are scored on the breadth of key indicators covered, how frequently and regularly
+       the data is produced, and how recent it is. Move the weights to see the ranking change.</p>
+    <p style="margin-top:8px;font-size:12.5px;color:#d9e6f5">*Labour Force Surveys, or labour modules
+       in other household surveys.</p>
+    <span class="sample-flag" id="sampleFlag" style="display:none"></span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats" id="stats"></div>
+
+  <div class="layout">
+    <!-- sidebar : weights + criteria -->
+    <aside class="panel sidebar">
+      <h2>Criteria weights</h2>
+      <div class="slider">
+        <div class="row"><b><span class="dot" style="background:var(--cov)"></span>Coverage of key indicators</b><span class="val" id="wcovv">1.0</span></div>
+        <input type="range" id="wcov" min="0" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider">
+        <div class="row"><b><span class="dot" style="background:var(--frq)"></span>Frequency &amp; regularity</b><span class="val" id="wfrqv">1.0</span></div>
+        <input type="range" id="wfrq" min="0" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider">
+        <div class="row"><b><span class="dot" style="background:var(--rec)"></span>Recency of latest data</b><span class="val" id="wrecv">1.0</span></div>
+        <input type="range" id="wrec" min="0" max="3" step="0.1" value="1">
+      </div>
+      <div class="ctl">
+        <button class="btn" id="reset">Reset</button>
+        <button class="btn primary" id="export">Export CSV</button>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin:14px 0 0">
+        Weights are normalised automatically. To change the indicator set, the
+        household-survey filter, or the scoring windows, edit
+        <code>pipeline/config.py</code> and re-run the pipeline.
+      </p>
+    </aside>
+
+    <!-- main : ranking table -->
+    <main class="panel">
+      <div class="controls">
+        <input type="search" id="search" placeholder="Search country…">
+        <select id="region"></select>
+        <select id="period">
+          <option value="All">Any frequency</option>
+          <option value="M">Monthly</option>
+          <option value="Q">Quarterly</option>
+          <option value="Q+">Quarterly or better</option>
+          <option value="A">Annual</option>
+          <option value="none">Irregular / no data</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="pendingOnly"> Pending data only</label>
+        <button class="btn" id="clearFilters" style="width:auto;padding:9px 12px">Clear</button>
+        <span class="count" id="count"></span>
+      </div>
+      <div style="overflow-x:auto">
+        <table id="tbl">
+          <thead><tr>
+            <th data-k="rank" class="sorted">#</th>
+            <th data-k="country">Country</th>
+            <th data-k="region">Region</th>
+            <th data-k="overall">Overall score</th>
+            <th data-k="coverage">Coverage</th>
+            <th data-k="frequency">Frequency</th>
+            <th data-k="recency">Recency</th>
+            <th data-k="latest_year">Latest</th>
+          </tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+
+      <div class="method">
+        <h2 style="font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:22px 0 12px">Methodology</h2>
+        <details open>
+          <summary>How the overall score works</summary>
+          <p>Each country gets three sub-scores from 0 to 100 — <b>coverage</b>, <b>frequency &amp; regularity</b>
+             and <b>recency</b> — computed from its ILOSTAT record, counting <b>only observations that come from
+             a household survey</b> (labour force surveys and other household surveys with a labour module;
+             administrative and establishment sources and population censuses are excluded). The overall score is
+             the weighted average of the three, using the weights on the left. Weights are normalised, so only
+             their <i>relative</i> sizes matter.</p>
+        </details>
+        <details>
+          <summary>Coverage of key indicators</summary>
+          <p>The share of the key indicators (weighted by importance, with headline indicators counting more) for
+             which the country has at least one qualifying household-survey datapoint within the coverage window.
+             The indicator set and the window are set in <code>config.py</code>.</p>
+        </details>
+        <details>
+          <summary>Frequency &amp; regularity</summary>
+          <p>The average of two parts: a <b>periodicity</b> score (monthly data scores highest, then quarterly, then
+             annual, then irregular) based on the fastest cadence the country sustains for its headline indicators;
+             and a <b>regularity</b> score — the share of recent years in which headline data was actually produced,
+             which penalises long gaps between surveys.</p>
+        </details>
+        <details>
+          <summary>Recency of latest data</summary>
+          <p>Based on the age of the most recent qualifying datapoint across the key indicators, decaying linearly
+             from full marks for current-year data down to zero once the newest data passes the configured age limit.</p>
+        </details>
+        <details>
+          <summary>Pending data (released but not yet in ILOSTAT)</summary>
+          <p>ILOSTAT re-publishes national data with a processing lag, so a country's newest figures often
+             sit on its national statistics office (NSO) site before they reach ILOSTAT. For tracked
+             countries we record the NSO's latest published period in a small registry
+             (<code>pipeline/nso_releases.json</code>), and the tool lists every period between ILOSTAT's
+             latest and the NSO's latest as <b>pending</b> — shown as a badge in the table and in detail
+             (with a source link) in the country panel. Countries not in the registry show no badge; it
+             doesn't mean they have nothing pending, only that we aren't tracking their NSO yet.</p>
+        </details>
+        <details>
+          <summary>Key indicators used</summary>
+          <div id="indList" style="font-size:13.5px;color:#354351"></div>
+        </details>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- detail drawer -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <header>
+    <button class="close" id="closeDrawer">&times;</button>
+    <h3 id="dName">—</h3>
+    <div class="sub" id="dSub"></div>
+  </header>
+  <div class="body" id="dBody"></div>
+</aside>
+
+<footer class="wrap">
+  <div class="credit">Compiled and developed by <a href="https://empstat.org">Empstat</a></div>
+  <p class="cite">Use of the information on this website can be cited as:
+    Empstat (<span id="citeYear"></span>), LFS Coverage Index: Country rankings of labour force survey
+    data coverage in ILOSTAT,
+    <a href="https://lfs.empstat.org">lfs.empstat.org</a> (accessed <span id="accessed"></span>)</p>
+  Data: <a href="https://ilostat.ilo.org/" target="_blank" rel="noopener">ILOSTAT</a> (© ILO),
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> —
+  adapted: filtered to household-survey sources and scored. Household-survey observations only.
+  This is an independent index and is not published or endorsed by the ILO.
+  <span id="genStamp"></span>
+</footer>
+
+<script src="data/rankings.js"></script>
+<script>
+const D = window.RANKINGS;
+const $ = s => document.querySelector(s);
+const fmt = n => (n===null||n===undefined) ? "—" : (Math.round(n*10)/10);
+
+const state = {
+  w:{coverage:1, frequency:1, recency:1},
+  sortKey:"overall", sortDir:-1, region:"All", period:"All", q:"", pendingOnly:false
+};
+const periodName = {M:"Monthly", Q:"Quarterly", A:"Annual", irregular:"Irregular", null:"—"};
+const MONTHS=["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function fmtPeriod(s){
+  if(!s) return "—";
+  const m=String(s).match(/^(\d{4})(?:Q([1-4])|M(\d{1,2}))?$/);
+  if(!m) return s;
+  if(m[2]) return `Q${m[2]} ${m[1]}`;
+  if(m[3]) return `${MONTHS[+m[3]]||("M"+m[3])} ${m[1]}`;
+  return m[1];
+}
+const indByCode = Object.fromEntries(D.indicators.map(i=>[i.code,i]));
+
+function overall(c){
+  const w=state.w, tot=w.coverage+w.frequency+w.recency || 1;
+  return (c.coverage*w.coverage + c.frequency*w.frequency + c.recency*w.recency)/tot;
+}
+function scoreColor(v){ return v>=70?"var(--good)":v>=45?"var(--mid)":"var(--low)"; }
+
+// frequency filter: a country's fastest sustained cadence for headline indicators
+function matchPeriod(c, sel){
+  const p = c.best_periodicity;               // "M" | "Q" | "A" | "irregular"
+  const hasData = c.latest_year != null;
+  switch(sel){
+    case "M":    return p==="M";
+    case "Q":    return p==="Q";
+    case "Q+":   return p==="Q" || p==="M";    // quarterly or better
+    case "A":    return p==="A";
+    case "none": return !hasData || p==="irregular";
+    default:     return true;
+  }
+}
+
+function computeRanked(){
+  const rows = D.countries.map(c=>({...c, overall:overall(c)}));
+  // filter
+  let f = rows.filter(c=>{
+    if(state.region!=="All" && c.region!==state.region) return false;
+    if(state.period!=="All" && !matchPeriod(c, state.period)) return false;
+    if(state.pendingOnly && !(c.pending && c.pending.count>0)) return false;
+    if(state.q && !c.country.toLowerCase().includes(state.q) && !c.iso3.toLowerCase().includes(state.q)) return false;
+    return true;
+  });
+  // always rank by overall to assign rank numbers (global), then sort for display
+  const byOverall = [...rows].sort((a,b)=>b.overall-a.overall);
+  const rankOf = {}; byOverall.forEach((c,i)=>rankOf[c.iso3]=i+1);
+  f.forEach(c=>c.rank=rankOf[c.iso3]);
+  const k=state.sortKey, dir=state.sortDir;
+  f.sort((a,b)=>{
+    let av=a[k], bv=b[k];
+    if(k==="country"||k==="region"){av=(av||"").toLowerCase();bv=(bv||"").toLowerCase();return av<bv?-dir:av>bv?dir:0;}
+    av=av==null?-1:av; bv=bv==null?-1:bv;
+    return (av-bv)*dir;
+  });
+  return f;
+}
+
+function scoreBar(v, color){
+  return `<div class="bar"><span style="width:${Math.max(v,2)}%;background:${color}"></span><em>${fmt(v)}</em></div>`;
+}
+function subBar(v,color){ return `<span class="sb" style="width:${Math.max(v*0.4,2)}px;background:${color}" title="${fmt(v)}"></span>`; }
+
+function render(){
+  const rows = computeRanked();
+  const tb = $("#rows"); tb.innerHTML="";
+  const medals={1:"🥇",2:"🥈",3:"🥉"};
+  rows.forEach(c=>{
+    const tr=document.createElement("tr");
+    tr.className="country-row"; tr.dataset.iso=c.iso3;
+    tr.innerHTML=`
+      <td class="rank">${c.rank}</td>
+      <td class="name">${c.country}</td>
+      <td class="region">${c.region}</td>
+      <td class="scorecell">${scoreBar(c.overall, scoreColor(c.overall))}</td>
+      <td><div class="subbars"><span class="mini">${fmt(c.coverage)}</span>${subBar(c.coverage,"var(--cov)")}</div></td>
+      <td><div class="subbars"><span class="mini">${fmt(c.frequency)}</span>${subBar(c.frequency,"var(--frq)")}</div></td>
+      <td><div class="subbars"><span class="mini">${fmt(c.recency)}</span>${subBar(c.recency,"var(--rec)")}</div></td>
+      <td>${c.latest_year??"—"}${c.best_periodicity&&c.best_periodicity!=="irregular"?` <span class="tag">${c.best_periodicity}</span>`:""}${c.pending&&c.pending.count?`<span class="pend" title="${c.pending.count} period(s) released by ${c.pending.nso||"the NSO"} but not yet in ILOSTAT">+${c.pending.count} pending</span>`:""}</td>`;
+    tr.onclick=()=>openDrawer(c.iso3);
+    tb.appendChild(tr);
+  });
+  $("#count").textContent = `${rows.length} of ${D.countries.length} countries`;
+  document.querySelectorAll("th").forEach(th=>{
+    th.classList.toggle("sorted", th.dataset.k===state.sortKey);
+    th.classList.toggle("asc", th.dataset.k===state.sortKey && state.sortDir===1);
+  });
+}
+
+function openDrawer(iso){
+  const c = D.countries.find(x=>x.iso3===iso);
+  const ov = overall(c);
+  $("#dName").textContent = c.country;
+  $("#dSub").textContent = `${c.region} · ${c.iso3} · rank #${computeRanked().find(x=>x.iso3===iso)?.rank ?? "—"} of ${D.countries.length}`;
+  const kpi=(n,l,col)=>`<div class="kpi"><div class="n" style="color:${col}">${fmt(n)}</div><div class="l">${l}</div></div>`;
+  const p=c.pending;
+  let pendHTML="";
+  if(p&&p.count){
+    const src=p.source?` · <a href="${p.source}" target="_blank" rel="noopener">source</a>`:"";
+    const chk=p.checked?` · checked ${p.checked}`:"";
+    pendHTML=`<div class="pending-box">
+      <div class="h">⏳ ${p.count} period${p.count>1?"s":""} released but pending in ILOSTAT</div>
+      Latest in ILOSTAT: <b>${fmtPeriod(c.latest_period)}</b> · latest from ${p.nso||"the NSO"}: <b>${fmtPeriod(p.nso_latest)}</b>.
+      <div class="periods">${p.periods.map(x=>`<span class="p">${fmtPeriod(x)}</span>`).join("")}</div>
+      <div class="src">Released by the national statistics office but not yet processed into ILOSTAT${src}${chk}.</div>
+    </div>`;
+  } else if(c.latest_period){
+    pendHTML=`<p class="uptodate">✓ ILOSTAT is level with the latest release we track (${fmtPeriod(c.latest_period)}).</p>`;
+  }
+  let html = `<div class="kpis">
+      ${kpi(ov,"Overall",scoreColor(ov))}
+      ${kpi(c.coverage,"Coverage","var(--cov)")}
+      ${kpi(c.frequency,"Frequency","var(--frq)")}
+      ${kpi(c.recency,"Recency","var(--rec)")}
+    </div>
+    <p style="font-size:13.5px;color:var(--muted);margin:0 0 14px">
+      ${c.n_covered} of ${c.n_total} key indicators covered ·
+      newest household-survey data: <b>${fmtPeriod(c.latest_period)||c.latest_year||"none"}</b> ·
+      fastest cadence: <b>${periodName[c.best_periodicity]||"—"}</b>
+    </p>
+    ${(c.sources&&c.sources.length)?`<p class="srcline"><b>Survey source${c.sources.length>1?"s":""}:</b> ${c.sources.map(s=>`${s.name}${s.latest?` <span class="tag">latest ${s.latest}</span>`:""}`).join(" &nbsp;·&nbsp; ")}</p>`:""}
+    ${pendHTML}
+    <table class="igrid"><tbody>`;
+  const tiers=[1,2];
+  tiers.forEach(t=>{
+    html+=`<tr><td colspan="3" style="padding-top:12px;color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em">${t===1?"Headline indicators":"Extended / disaggregated indicators"}</td></tr>`;
+    D.indicators.filter(i=>i.tier===t).forEach(ind=>{
+      const rec=c.indicators[ind.code]||{};
+      const cov=rec.covered;
+      html+=`<tr class="${t===2?'tier2':''}">
+        <td class="st">${cov?'<span class="yes">●</span>':'<span class="no">○</span>'}</td>
+        <td>${ind.label}</td>
+        <td style="text-align:right;color:var(--muted)">${cov?`${rec.latest??""} ${rec.via?`<span class="tag">${rec.via}</span> `:""}${rec.periodicity?`<span class="tag">${rec.periodicity}</span>`:""}`:"no data"}</td>
+      </tr>`;
+    });
+  });
+  html+="</tbody></table>";
+  $("#dBody").innerHTML=html;
+  $("#overlay").classList.add("open"); $("#drawer").classList.add("open");
+}
+function closeDrawer(){ $("#overlay").classList.remove("open"); $("#drawer").classList.remove("open"); }
+
+// Breakdown behind the headline figures: most-covered indicators, common survey
+// sources, and the biggest pending gaps.
+function openBreakdown(focus){
+  const cs=D.countries, total=cs.length;
+  const bar=(n,max,col)=>`<div class="brk-bar"><span style="width:${Math.max(3,100*n/(max||1))}%;background:${col}"></span></div><span class="brk-n">${n}</span>`;
+  const rows=(arr,col)=>{const m=Math.max(1,...arr.map(x=>x.n));return arr.map(x=>`<div class="brk-row"><div class="brk-label">${x.label||x.name}</div>${bar(x.n,m,col)}</div>`).join("");};
+  const none=t=>`<p style="color:var(--muted);font-size:13px">${t}</p>`;
+  let title="", body="";
+
+  if(focus==="indicators"){
+    const a=D.indicators.map(i=>({label:i.label,
+      n:cs.filter(c=>c.indicators[i.code]&&c.indicators[i.code].covered).length})).sort((x,y)=>y.n-x.n);
+    title="Indicators";
+    body=`<h4 class="brk-h">Indicators by coverage <span>(countries with data, of ${total})</span></h4>`+rows(a,"var(--cov)");
+  }
+  else if(focus==="sources"){
+    const map={}; cs.forEach(c=>(c.sources||[]).forEach(s=>map[s.name]=(map[s.name]||0)+1));
+    const a=Object.entries(map).map(([name,n])=>({name,n})).sort((x,y)=>y.n-x.n);
+    title="Data sources";
+    body=`<h4 class="brk-h">Most common survey sources</h4>`+(a.length?rows(a,"var(--frq)"):none("No named sources in this dataset."));
+  }
+  else if(focus==="frequency"){
+    const c2={M:0,Q:0,A:0,irregular:0};
+    cs.forEach(c=>{const p=(c.latest_year!=null)?(c.best_periodicity||"irregular"):"irregular"; c2[p]=(c2[p]||0)+1;});
+    const a=[["M","Monthly"],["Q","Quarterly"],["A","Annual"],["irregular","Irregular / no data"]]
+      .map(([k,l])=>({label:l,n:c2[k]||0}));
+    title="Frequency";
+    body=`<h4 class="brk-h">Countries by data frequency</h4>`+rows(a,"var(--frq)");
+  }
+  else if(focus==="pending"){
+    const a=cs.filter(c=>c.pending&&c.pending.count>0)
+             .map(c=>({name:c.country,n:c.pending.count})).sort((x,y)=>y.n-x.n);
+    title="Pending in ILOSTAT";
+    body=`<h4 class="brk-h">Pending gaps <span>(periods released but not yet in ILOSTAT)</span></h4>`+
+         (a.length?rows(a,"#c99700"):none("No tracked countries with pending data."));
+  }
+  else return;
+
+  $("#dName").textContent=title;
+  $("#dSub").textContent=`${total} countries · ${D.indicators.length} indicators tracked`;
+  $("#dBody").innerHTML=body;
+  $("#overlay").classList.add("open"); $("#drawer").classList.add("open");
+}
+
+function setWeights(){
+  ["cov","frq","rec"].forEach(k=>{
+    const map={cov:"coverage",frq:"frequency",rec:"recency"};
+    const v=parseFloat($("#w"+k).value); state.w[map[k]]=v; $("#w"+k+"v").textContent=v.toFixed(1);
+  });
+  render();
+}
+
+function exportCSV(){
+  const rows=computeRanked();
+  const head=["rank","iso3","country","region","overall","coverage","frequency","recency","latest_year","best_periodicity","n_covered","n_total"];
+  const lines=[head.join(",")].concat(rows.map(c=>head.map(h=>{
+    let v=h==="overall"?fmt(c.overall):c[h]; v=v==null?"":String(v);
+    return /[",]/.test(v)?`"${v.replace(/"/g,'""')}"`:v;
+  }).join(",")));
+  const blob=new Blob([lines.join("\n")],{type:"text/csv"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download="lfs_coverage_index.csv"; a.click();
+}
+
+function initStats(){
+  const cs=D.countries.map(c=>({...c,overall:overall(c)}));
+  const avg=a=>Math.round(a.reduce((s,x)=>s+x,0)/a.length);
+  const withData=cs.filter(c=>c.latest_year).length;
+  const q=cs.filter(c=>c.best_periodicity==="Q"||c.best_periodicity==="M").length;
+  const pend=cs.filter(c=>c.pending&&c.pending.count>0).length;
+  const stats=[
+    ["#countries covered", D.countries.length, ""],
+    ["key indicators tracked", D.indicators.length, "indicators"],
+    ["with household-survey data", withData, "sources"],
+    ["quarterly or better", q, "frequency"],
+    ["with data pending in ILOSTAT", pend, "pending"],
+  ];
+  $("#stats").innerHTML=stats.map(s=>`<div class="stat${s[2]?"":" nolink"}"${s[2]?` data-b="${s[2]}"`:""}><div class="n">${s[1]}</div><div class="l">${s[0]}</div></div>`).join("");
+  $("#stats").querySelectorAll(".stat[data-b]").forEach(el=>el.onclick=()=>openBreakdown(el.dataset.b));
+}
+
+function init(){
+  if(!D){ document.body.innerHTML="<p style='padding:40px'>Could not load rankings.js.</p>"; return; }
+  // sample flag
+  if(D.is_sample){ const f=$("#sampleFlag"); f.style.display="inline-block";
+    f.textContent="⚠ Illustrative sample data — run pipeline/fetch_and_rank.py for live ILOSTAT figures"; }
+  $("#genStamp").textContent = D.generated?` · data generated ${D.generated}`:"";
+  $("#accessed").textContent = new Date().toLocaleDateString(undefined,{day:"numeric",month:"long",year:"numeric"});
+  $("#citeYear").textContent = new Date().getFullYear();
+  // default weights from data
+  if(D.default_weights){ state.w={...D.default_weights};
+    $("#wcov").value=state.w.coverage; $("#wfrq").value=state.w.frequency; $("#wrec").value=state.w.recency; }
+  ["cov","frq","rec"].forEach(k=>{ $("#w"+k+"v").textContent=parseFloat($("#w"+k).value).toFixed(1); });
+  // regions
+  const regions=["All",...Array.from(new Set(D.countries.map(c=>c.region))).sort()];
+  $("#region").innerHTML=regions.map(r=>`<option>${r}</option>`).join("");
+  // indicator list in methodology
+  $("#indList").innerHTML = [1,2].map(t=>{
+    const items=D.indicators.filter(i=>i.tier===t).map(i=>`<li>${i.label} <span class="tag">${i.code}</span></li>`).join("");
+    return `<p style="margin:8px 0 2px"><b>${t===1?"Headline":"Extended / disaggregated"}</b></p><ul style="margin:0 0 6px 18px">${items}</ul>`;
+  }).join("");
+
+  // events
+  ["wcov","wfrq","wrec"].forEach(id=>$("#"+id).addEventListener("input",setWeights));
+  $("#reset").onclick=()=>{ const d=D.default_weights||{coverage:1,frequency:1,recency:1};
+    $("#wcov").value=d.coverage;$("#wfrq").value=d.frequency;$("#wrec").value=d.recency;setWeights(); };
+  $("#export").onclick=exportCSV;
+  $("#search").addEventListener("input",e=>{state.q=e.target.value.trim().toLowerCase();render();});
+  $("#region").addEventListener("change",e=>{state.region=e.target.value;render();});
+  $("#period").addEventListener("change",e=>{state.period=e.target.value;render();});
+  $("#pendingOnly").addEventListener("change",e=>{state.pendingOnly=e.target.checked;render();});
+  $("#clearFilters").onclick=()=>{
+    state.region="All"; state.period="All"; state.q=""; state.pendingOnly=false;
+    $("#region").value="All"; $("#period").value="All"; $("#search").value=""; $("#pendingOnly").checked=false;
+    render();
+  };
+  document.querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{
+    const k=th.dataset.k;
+    if(state.sortKey===k) state.sortDir*=-1;
+    else { state.sortKey=k; state.sortDir=(k==="country"||k==="region"||k==="rank")?1:-1; }
+    render();
+  }));
+  $("#closeDrawer").onclick=closeDrawer; $("#overlay").onclick=closeDrawer;
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
+
+  initStats(); render();
+}
+init();
+</script>
+</body>
+</html>

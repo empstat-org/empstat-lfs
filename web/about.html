@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About &amp; methodology — Empstat coverage indices</title>
+<style>
+  :root{
+    --brand:#1a5bad; --brand-dark:#123f83; --brand-light:#e7effb;
+    --ink:#1b2536; --muted:#5c6d85; --line:#e3e9f1; --bg:#f6f8fc; --card:#fff;
+    --shadow:0 1px 3px rgba(16,32,64,.08),0 6px 24px rgba(16,32,64,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:var(--brand)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header.top{background:linear-gradient(120deg,var(--brand-dark),var(--brand));color:#fff;padding:34px 0 30px}
+  .backlink{display:inline-flex;align-items:center;gap:5px;color:#d9e6f5;text-decoration:none;font-size:13px;font-weight:600;margin-right:14px;opacity:.9}
+  .backlink:hover{opacity:1;text-decoration:underline;color:#fff}
+  header.top h1{margin:12px 0 6px;font-size:26px;letter-spacing:-.01em}
+  header.top p{margin:0;max-width:680px;color:#d9e6f5;font-size:15px}
+  main{padding:30px 0 20px}
+  .card{background:var(--card);border-radius:12px;box-shadow:var(--shadow);padding:24px 26px;margin-bottom:20px}
+  h2{font-size:18px;margin:0 0 12px}
+  h3{font-size:15px;margin:18px 0 6px}
+  p,li{font-size:14.5px;color:#33414f}
+  table{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:14px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  code{background:#eff3f9;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .pill{display:inline-block;font-size:12px;font-weight:700;color:#fff;background:var(--brand);border-radius:20px;padding:3px 10px;text-decoration:none}
+  .pill:hover{background:var(--brand-dark)}
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+  footer{color:var(--muted);font-size:12.5px;text-align:center;padding:8px 0 40px}
+  footer .credit{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px}
+  footer a{text-decoration:none}
+  footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="backlink" href="https://empstat.org">&larr; empstat.org</a>
+    <a class="backlink" href="https://lfs.empstat.org">LFS</a>
+    <a class="backlink" href="https://census.empstat.org">Census</a>
+    <a class="backlink" href="https://admin.empstat.org">Admin</a>
+    <h1>About &amp; methodology</h1>
+    <p>How Empstat's labour-data coverage indices are built from ILOSTAT — what they
+       measure, how countries are scored, and the caveats to keep in mind.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="card">
+    <h2>What these are</h2>
+    <p>Three companion indices that rank countries by how well their labour market data
+       is covered in <a href="https://ilostat.ilo.org/" target="_blank" rel="noopener">ILOSTAT</a>,
+       each looking at a different type of data source:</p>
+    <table>
+      <thead><tr><th>Index</th><th>Source</th><th>Criteria</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://lfs.empstat.org">LFS Coverage Index</a></td>
+            <td>Labour force surveys, or labour modules in other household surveys</td>
+            <td>Coverage + frequency + recency (plus pending)</td></tr>
+        <tr><td><a href="https://census.empstat.org">Census Coverage Index</a></td>
+            <td>Population (&amp; housing) censuses</td>
+            <td>Coverage + recency</td></tr>
+        <tr><td><a href="https://admin.empstat.org">Administrative Data Coverage Index</a></td>
+            <td>Registers, social security, labour inspection, industrial relations</td>
+            <td>Coverage + frequency + recency</td></tr>
+      </tbody>
+    </table>
+    <div class="pills">
+      <a class="pill" href="https://lfs.empstat.org">Open LFS</a>
+      <a class="pill" href="https://census.empstat.org">Open Census</a>
+      <a class="pill" href="https://admin.empstat.org">Open Admin</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>How the score works</h2>
+    <p>Each country gets sub-scores from 0 to 100, and the overall score is their weighted
+       average (the weights are adjustable live on each site; they are normalised, so only
+       their relative sizes matter).</p>
+    <h3>Coverage</h3>
+    <p>The share of that index's key indicators — weighted by importance, with headline
+       indicators counting more — for which the country has at least one qualifying datapoint
+       (from the right source type) within a coverage window.</p>
+    <h3>Frequency &amp; regularity <span style="font-weight:400;color:var(--muted)">(LFS &amp; Administrative only)</span></h3>
+    <p>The average of a <b>periodicity</b> score (monthly &gt; quarterly &gt; annual &gt; irregular,
+       based on the fastest cadence the country sustains for its headline indicators) and a
+       <b>regularity</b> score (the share of recent years with data, which penalises gaps).
+       Censuses are roughly decennial, so the Census index omits this criterion.</p>
+    <h3>Recency</h3>
+    <p>Based on the age of the most recent datapoint, decaying from full marks for current data
+       to zero past an age limit. The Census index uses a longer, decennial window.</p>
+  </div>
+
+  <div class="card">
+    <h2>Data source &amp; source filtering</h2>
+    <p>All figures come from ILOSTAT. Each index counts <b>only</b> observations from its
+       source type — ILOSTAT tags every observation with its source, and we filter on that.
+       The LFS index counts household surveys (not censuses, administrative records or
+       establishment surveys); the Census index counts population/housing censuses; the
+       Administrative index counts register-, social-security-, inspection- and
+       industrial-relations-based sources.</p>
+    <h3>Pending data (LFS)</h3>
+    <p>ILOSTAT re-publishes national data with a lag, so a country's newest figures often sit
+       on its national statistics office (NSO) site first. For tracked countries the LFS index
+       lists the periods released by the NSO but not yet in ILOSTAT, with a source link.</p>
+    <h3>Citizenship or place of birth</h3>
+    <p>The "employment by citizenship or place of birth" indicator prefers citizenship data,
+       and falls back to place-of-birth data only where citizenship is unavailable; each
+       country's panel shows which was used.</p>
+  </div>
+
+  <div class="card">
+    <h2>Caveats</h2>
+    <ul>
+      <li>Sites shown with a yellow banner are on <b>illustrative sample data</b>; live ILOSTAT
+          figures load once the weekly pipeline has run.</li>
+      <li>A few indicator codes are best-effort and should be verified against ILOSTAT (some
+          administrative series, working-age population, LU4, and the citizenship/place-of-birth
+          series).</li>
+      <li>The NSO release dates behind the pending feature are illustrative starters to verify
+          per country.</li>
+      <li>Censuses rarely produce some indicators (hours, earnings, informality, LU4), which
+          legitimately show low coverage in the Census index.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Use &amp; attribution</h2>
+    <p>ILOSTAT data is licensed under
+       <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>;
+       these indices adapt it (filtering to a source type and scoring). They are independent and
+       are <b>not published or endorsed by the ILO</b>. Suggested citation format:</p>
+    <p style="font-style:italic;color:var(--muted)">Empstat (year), [Index name]: Country rankings of …
+       coverage in ILOSTAT, [subdomain] (accessed [date]).</p>
+  </div>
+
+</main>
+
+<footer class="wrap">
+  <div class="credit">Compiled and developed by <a href="https://empstat.org">Empstat</a></div>
+  Data: <a href="https://ilostat.ilo.org/" target="_blank" rel="noopener">ILOSTAT</a> (© ILO),
+  licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
+  Independent index; not published or endorsed by the ILO.
+</footer>
+</body>
+</html>
