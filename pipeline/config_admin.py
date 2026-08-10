@@ -33,8 +33,6 @@ KEY_INDICATORS = [
     # Tier 2 — extended administrative series
     {"code": "STR_DAYS_ECO_NB",         "label": "Days not worked due to strikes/lockouts",  "tier": 2, "weight": 1.0, "periodicities": ["A"]},
     {"code": "LAI_INSP_SEX_NB",         "label": "Number of labour inspectors",              "tier": 2, "weight": 1.0, "periodicities": ["A"]},
-    {"code": "EMP_TEMP_SEX_STE_NB",     "label": "Employees (register/social security)",     "tier": 2, "weight": 1.0, "periodicities": ["Q", "A"]},
-    {"code": "HOW_TEMP_SEX_ECO_NB",     "label": "Hours of work (establishment/register)",   "tier": 2, "weight": 1.0, "periodicities": ["Q", "A"]},
 ]
 
 # ------------------------------------------------------------------------------
@@ -57,7 +55,7 @@ SOURCE_EXCLUDE_KEYWORDS = [
     "population census",
     "modelled",              # exclude ILO modelled estimates — national admin sources only
     "modeled",
-    "estimate",
+    "official estimate",
 ]
 
 # ------------------------------------------------------------------------------

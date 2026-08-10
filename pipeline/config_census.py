@@ -69,7 +69,7 @@ SOURCE_EXCLUDE_KEYWORDS = [
     "establishment census",
     "modelled",              # exclude ILO modelled estimates — national sources only
     "modeled",
-    "estimate",
+    "official estimate",
 ]
 
 # ------------------------------------------------------------------------------
