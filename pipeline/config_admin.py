@@ -24,15 +24,15 @@ ENABLE_PENDING = False
 # ------------------------------------------------------------------------------
 KEY_INDICATORS = [
     # Tier 1 — core administrative series
-    {"code": "UNE_2UNE_SEX_AGE_NB",     "label": "Registered unemployment",                 "tier": 1, "weight": 2.0, "periodicities": ["M", "Q", "A"]},
+    {"code": "UNE_TUNE_SEX_AGE_NB",     "label": "Registered unemployment",                 "tier": 1, "weight": 2.0, "periodicities": ["M", "Q", "A"]},
     {"code": "EMP_TEMP_SEX_ECO_NB",     "label": "Employment by economic activity (register/SSA)", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
-    {"code": "EAR_4MTH_SEX_ECO_CUR_NB", "label": "Average monthly earnings of employees",    "tier": 1, "weight": 1.5, "periodicities": ["M", "Q", "A"]},
+    {"code": "EAR_EMTA_SEX_ECO_CUR_NB", "label": "Average monthly earnings of employees",    "tier": 1, "weight": 1.5, "periodicities": ["M", "Q", "A"]},
     {"code": "INJ_FATL_ECO_RT",         "label": "Occupational injuries, fatal (rate)",      "tier": 1, "weight": 1.5, "periodicities": ["A"]},
     {"code": "INJ_NFTL_ECO_RT",         "label": "Occupational injuries, non-fatal (rate)",  "tier": 1, "weight": 1.5, "periodicities": ["A"]},
 
     # Tier 2 — extended administrative series
-    {"code": "ILR_STRK_ECO_NB",         "label": "Days not worked due to strikes/lockouts",  "tier": 2, "weight": 1.0, "periodicities": ["A"]},
-    {"code": "LAI_INSP_NOC_NB",         "label": "Number of labour inspectors",              "tier": 2, "weight": 1.0, "periodicities": ["A"]},
+    {"code": "STR_DAYS_ECO_NB",         "label": "Days not worked due to strikes/lockouts",  "tier": 2, "weight": 1.0, "periodicities": ["A"]},
+    {"code": "LAI_INSP_SEX_NB",         "label": "Number of labour inspectors",              "tier": 2, "weight": 1.0, "periodicities": ["A"]},
     {"code": "EMP_TEMP_SEX_STE_NB",     "label": "Employees (register/social security)",     "tier": 2, "weight": 1.0, "periodicities": ["Q", "A"]},
     {"code": "HOW_TEMP_SEX_ECO_NB",     "label": "Hours of work (establishment/register)",   "tier": 2, "weight": 1.0, "periodicities": ["Q", "A"]},
 ]
@@ -55,6 +55,9 @@ SOURCE_EXCLUDE_KEYWORDS = [
     "labour force survey",
     "household survey",
     "population census",
+    "modelled",              # exclude ILO modelled estimates — national admin sources only
+    "modeled",
+    "estimate",
 ]
 
 # ------------------------------------------------------------------------------

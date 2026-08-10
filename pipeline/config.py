@@ -53,21 +53,21 @@ KEY_INDICATORS = [
     {"code": "EMP_DWAP_SEX_AGE_RT",     "label": "Employment-to-population ratio",  "tier": 1, "weight": 2.0, "periodicities": ["M", "Q", "A"]},
     {"code": "UNE_TUNE_SEX_AGE_NB",     "label": "Unemployment",                    "tier": 1, "weight": 2.0, "periodicities": ["M", "Q", "A"]},
     {"code": "UNE_DEAP_SEX_AGE_RT",     "label": "Unemployment rate",               "tier": 1, "weight": 2.0, "periodicities": ["M", "Q", "A"]},
-    {"code": "LUU_DLU4_SEX_AGE_RT",     "label": "Composite measure of labour underutilization (LU4)", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
+    {"code": "LUU_XLU4_SEX_AGE_RT",     "label": "Composite measure of labour underutilization (LU4)", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
     {"code": "EMP_TEMP_SEX_STE_NB",     "label": "Employment by status in employment", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
     {"code": "EMP_TEMP_SEX_OCU_NB",     "label": "Employment by occupation",        "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
     {"code": "EMP_TEMP_SEX_ECO_NB",     "label": "Employment by economic activity", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
     {"code": "EMP_NIFL_SEX_RT",         "label": "Informal employment rate",        "tier": 1, "weight": 1.5, "periodicities": ["A"]},
     {"code": "HOW_TEMP_SEX_ECO_NB",     "label": "Mean weekly hours actually worked", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
-    {"code": "EAR_4MTH_SEX_ECO_CUR_NB", "label": "Average monthly earnings of employees", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
+    {"code": "EAR_EMTA_SEX_ECO_CUR_NB", "label": "Average monthly earnings of employees", "tier": 1, "weight": 1.5, "periodicities": ["Q", "A"]},
 
     # ---- Tier 2 : extended / disaggregated indicators -----------------------
     {"code": "UNE_TUNE_SEX_AGE_DUR_NB",   "label": "Unemployment by duration",                 "tier": 2, "weight": 1.0, "periodicities": ["A"]},
     # Fallback indicator: use citizenship if available, otherwise place of birth.
     # `codes` are tried in order per country; the first with data wins.
-    {"code": "EMP_TEMP_SEX_CTZ_NB",
-     "codes": ["EMP_TEMP_SEX_CTZ_NB", "EMP_TEMP_SEX_POB_NB"],
-     "code_labels": {"EMP_TEMP_SEX_CTZ_NB": "citizenship", "EMP_TEMP_SEX_POB_NB": "place of birth"},
+    {"code": "EMP_TEMP_SEX_AGE_CCT_NB",
+     "codes": ["EMP_TEMP_SEX_AGE_CCT_NB", "EMP_TEMP_SEX_AGE_CBR_NB"],
+     "code_labels": {"EMP_TEMP_SEX_AGE_CCT_NB": "citizenship", "EMP_TEMP_SEX_AGE_CBR_NB": "place of birth"},
      "label": "Employment by citizenship or place of birth", "tier": 2, "weight": 1.0, "periodicities": ["A"]},
     {"code": "EMP_TEMP_SEX_GEO_NB",       "label": "Employment by urban / rural",              "tier": 2, "weight": 1.0, "periodicities": ["A"]},
     {"code": "EMP_TEMP_SEX_AGE_DSB_NB",   "label": "Employment by disability",                 "tier": 2, "weight": 1.0, "periodicities": ["A"]},
@@ -104,6 +104,9 @@ SOURCE_EXCLUDE_KEYWORDS = [
     "population census",   # census is a household enumeration but not a *survey*; exclude by default
     "insurance records",
     "official estimate",
+    "modelled",              # exclude ILO modelled estimates — national sources only
+    "modeled",
+    "estimate",
 ]
 
 # ------------------------------------------------------------------------------
