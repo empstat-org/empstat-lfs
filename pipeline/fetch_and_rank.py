@@ -215,11 +215,19 @@ def _get_csv_rows(url):
 # --------------------------------------------------------------------------- #
 def is_household_source(label):
     """True if a source LABEL (e.g. 'Labour force survey') is an included source
-    for this index, per the config keywords."""
+    for this index, per the config keywords.
+
+    If HOUSEHOLD_SURVEY_KEYWORDS is empty, the index counts ALL sources EXCEPT
+    those matching SOURCE_EXCLUDE_KEYWORDS. (Used by the Enterprise index, which
+    wants every establishment / enterprise / register source except household
+    surveys, population censuses and modelled estimates.)"""
     l = (label or "").lower()
     if any(x in l for x in C.SOURCE_EXCLUDE_KEYWORDS):
         return False
-    return any(x in l for x in C.HOUSEHOLD_SURVEY_KEYWORDS)
+    inc = getattr(C, "HOUSEHOLD_SURVEY_KEYWORDS", [])
+    if not inc:
+        return True
+    return any(x in l for x in inc)
 
 
 def load_countries():
