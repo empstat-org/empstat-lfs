@@ -13,7 +13,7 @@ Run:  python fetch_and_rank.py --config config_census --out ../web/census/data
 
 from config import ILOSTAT, REGIONS  # reuse the same ILOSTAT endpoints + region map
 
-INDEX_NAME = "Population Census"
+INDEX_NAME = "Population Census Coverage Index"
 ENABLE_PENDING = False
 
 # ------------------------------------------------------------------------------
