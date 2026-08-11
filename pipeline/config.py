@@ -85,8 +85,24 @@ KEY_INDICATORS = [
 # The pipeline matches the source label (from ILOSTAT's source code list,
 # CL_SURVEY) against these keywords, case-insensitively. Add/remove to taste.
 HOUSEHOLD_SURVEY_KEYWORDS = [
-    "labour force survey",
+    # --- labour force surveys (any national branding) ---------------------
+    "labour force",          # catches "Labour force survey", "Quarterly labour force survey", etc.
+    "labor force",           # US / other -or- spelling (e.g. "Current Population Survey" is added below)
+    "labour survey",
+    "labor survey",
+    "current population survey",   # USA (BLS Current Population Survey — the US LFS)
+    "manpower survey",
+    "workforce survey",
+    "work force survey",
+    # --- employment / unemployment household surveys ----------------------
+    "employment survey",           # e.g. Angola & many national employment surveys
+    "employment and unemployment", # e.g. India (NSS Employment & Unemployment Survey)
+    "unemployment survey",
+    # --- generic household surveys with a labour module -------------------
     "household survey",
+    "household sample survey",      # Brazil PNAD ("Continuous National Household Sample Survey")
+    "national sample survey",       # India NSS
+    "pnad",                         # Brazil (Pesquisa Nacional por Amostra de Domicílios)
     "household income",
     "living standards",
     "living conditions",
@@ -95,6 +111,38 @@ HOUSEHOLD_SURVEY_KEYWORDS = [
     "integrated household",
     "continuous household",
     "multipurpose household",
+    # --- Spanish-language survey names (ILOSTAT sometimes labels in Spanish) --
+    "encuesta de hogares",              # generic household survey
+    "encuesta nacional de hogares",
+    "encuesta permanente de hogares",   # Argentina (EPH)
+    "encuesta continua de hogares",     # Uruguay / Bolivia
+    "gran encuesta integrada de hogares",  # Colombia (GEIH)
+    "encuesta de empleo",
+    "encuesta nacional de empleo",      # Chile / others (ENE)
+    "encuesta de ocupación",
+    "encuesta nacional de ocupación",   # Mexico (ENOE)
+    "encuesta de fuerza de trabajo",
+    "encuesta de fuerza laboral",
+    "encuesta de mano de obra",
+    "encuesta de condiciones de vida",
+    "fuerza de trabajo",
+    "fuerza laboral",
+    # --- Portuguese-language survey names ------------------------------------
+    "pesquisa nacional por amostra de domicílios",  # Brazil (PNAD, full name)
+    "pesquisa por amostra de domicílios",
+    "amostra de domicílios",
+    "amostra de domicilios",            # accent-stripped fallback
+    "pesquisa de emprego",
+    "pesquisa mensal de emprego",       # Brazil (PME)
+    "pesquisa de emprego e desemprego", # Brazil (PED)
+    "inquérito ao emprego",             # Portugal / Angola / Mozambique
+    "inquerito ao emprego",             # accent-stripped fallback
+    "inquérito às forças de trabalho",  # Portugal (LFS)
+    "inquerito as forcas de trabalho",  # accent-stripped fallback
+    "inquérito ao mercado de trabalho",
+    "inquérito aos agregados familiares",  # household survey (PT)
+    "força de trabalho",
+    "forca de trabalho",                # accent-stripped fallback
 ]
 
 # Sources to explicitly exclude even if a keyword matched (defensive).
