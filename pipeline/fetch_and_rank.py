@@ -213,15 +213,44 @@ def _get_csv_rows(url):
 # --------------------------------------------------------------------------- #
 # Reference data: source labels, country names/regions
 # --------------------------------------------------------------------------- #
-def is_household_source(label):
-    """True if a source LABEL (e.g. 'Labour force survey') is an included source
-    for this index, per the config keywords.
+def source_code(label):
+    """ILOSTAT source labels are of the form 'CODE - Description', e.g.
+    'LFS - Current Population Survey', 'HIES - Household Budget Survey',
+    'ES - Labour Cost Survey', 'ADM-EBR - Businesses register'. Return the
+    leading CODE (upper-case), or '' if the label has no such code prefix.
 
-    If HOUSEHOLD_SURVEY_KEYWORDS is empty, the index counts ALL sources EXCEPT
-    those matching SOURCE_EXCLUDE_KEYWORDS. (Used by the Enterprise index, which
-    wants every establishment / enterprise / register source except household
-    surveys, population censuses and modelled estimates.)"""
+    Known families: LFS / LFS-ADJ (labour force surveys), HIES (household income
+    & expenditure), HS (other household surveys), ES (establishment surveys),
+    EC (economic / establishment censuses), PC (population censuses),
+    ADM / ADM-IR / ADM-EBR / ADM-EOR (administrative records & registers),
+    SNA (national accounts), OE (official estimates)."""
+    if not label:
+        return ""
+    head = label.split(" - ", 1)[0].strip()
+    if head and len(head) <= 10 and all(c.isalnum() or c in "-/" for c in head):
+        return head.upper()
+    return ""
+
+
+def is_household_source(label):
+    """True if a source LABEL is an included source for this index.
+
+    Primary filter is the ILOSTAT source-type CODE prefix (see source_code),
+    which is the reliable, language-independent way to tell labour-force /
+    household surveys (LFS, HIES, HS) from establishment surveys (ES), economic
+    censuses (EC), administrative records/registers (ADM*), etc. If a config
+    defines SOURCE_INCLUDE_PREFIXES, any label carrying a recognised code is kept
+    iff its code is in that set.
+
+    Labels with no recognised code prefix (and indices that don't set
+    SOURCE_INCLUDE_PREFIXES) fall back to the legacy keyword filter: excluded if
+    it matches SOURCE_EXCLUDE_KEYWORDS, otherwise included when
+    HOUSEHOLD_SURVEY_KEYWORDS is empty (include-all) or a keyword matches."""
     l = (label or "").lower()
+    code = source_code(label)
+    inc_pref = getattr(C, "SOURCE_INCLUDE_PREFIXES", None)
+    if inc_pref is not None and code:
+        return code in {p.upper() for p in inc_pref}
     if any(x in l for x in C.SOURCE_EXCLUDE_KEYWORDS):
         return False
     inc = getattr(C, "HOUSEHOLD_SURVEY_KEYWORDS", [])

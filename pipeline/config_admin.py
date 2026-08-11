@@ -49,6 +49,17 @@ HOUSEHOLD_SURVEY_KEYWORDS = [   # = sources to INCLUDE for this index
     "labour inspection",
     "insurance records",
 ]
+
+# PREFERRED FILTER — ILOSTAT source-type CODE prefixes (see fetch_and_rank.source_code).
+# The Admin index keeps the administrative-record families:
+#   ADM     = administrative records (general)
+#   ADM-IR  = insurance records (social security / social insurance)
+#   ADM-EBR = establishment / business registers
+#   ADM-EOR = employment-office / other registers
+# Authoritative for any label carrying a recognised code; the keyword lists remain
+# a fallback for un-prefixed labels.
+SOURCE_INCLUDE_PREFIXES = ["ADM", "ADM-IR", "ADM-EBR", "ADM-EOR"]
+
 SOURCE_EXCLUDE_KEYWORDS = [
     "labour force survey",
     "household survey",

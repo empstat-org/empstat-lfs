@@ -156,6 +156,21 @@ SOURCE_EXCLUDE_KEYWORDS = [
     "modeled",
 ]
 
+# PREFERRED FILTER — ILOSTAT source-type CODE prefixes.
+# ILOSTAT labels every source as "CODE - Description" (e.g.
+# "LFS - Current Population Survey", "HIES - Household Budget Survey"). Filtering
+# on the CODE is language-independent and far more reliable than matching the
+# free-text keywords above (which miss nationally-branded surveys such as the US
+# Current Population Survey, Brazil's PNAD, etc.). When set, this takes precedence
+# over HOUSEHOLD_SURVEY_KEYWORDS / SOURCE_EXCLUDE_KEYWORDS for any label that
+# carries a recognised code; the keyword lists remain a fallback for un-prefixed
+# labels. For the LFS index we keep the household / labour-force survey families:
+#   LFS  = labour force surveys (any national name)
+#   LFS-ADJ = adjusted labour force series
+#   HIES = household income & expenditure surveys
+#   HS   = other household surveys (with a labour module)
+SOURCE_INCLUDE_PREFIXES = ["LFS", "LFS-ADJ", "HIES", "HS"]
+
 # ------------------------------------------------------------------------------
 # SCORING
 # ------------------------------------------------------------------------------
