@@ -321,6 +321,10 @@ function overall(c){
   return (c.coverage*w.coverage + c.frequency*w.frequency + c.recency*w.recency)/tot;
 }
 function scoreColor(v){ return v>=70?"var(--good)":v>=45?"var(--mid)":"var(--low)"; }
+function perTags(list, fallback){
+  let ps = (list && list.length) ? list : (fallback && fallback!=="irregular" ? [fallback] : []);
+  return ps.map(p=>`<span class="tag">${p}</span>`).join(" ");
+}
 
 // frequency filter: a country's fastest sustained cadence for headline indicators
 function matchPeriod(c, sel){
@@ -380,7 +384,7 @@ function render(){
       <td><div class="subbars"><span class="mini">${fmt(c.coverage)}</span>${subBar(c.coverage,"var(--cov)")}</div></td>
       <td><div class="subbars"><span class="mini">${fmt(c.frequency)}</span>${subBar(c.frequency,"var(--frq)")}</div></td>
       <td><div class="subbars"><span class="mini">${fmt(c.recency)}</span>${subBar(c.recency,"var(--rec)")}</div></td>
-      <td>${c.latest_year??"—"}${c.best_periodicity&&c.best_periodicity!=="irregular"?` <span class="tag">${c.best_periodicity}</span>`:""}${c.pending&&c.pending.count?`<span class="pend" title="${c.pending.count} period(s) released by ${c.pending.nso||"the NSO"} but not yet in ILOSTAT">+${c.pending.count} pending</span>`:""}</td>`;
+      <td>${c.latest_year??"—"} ${perTags(c.periodicities, c.best_periodicity)}${c.pending&&c.pending.count?`<span class="pend" title="${c.pending.count} period(s) released by ${c.pending.nso||"the NSO"} but not yet in ILOSTAT">+${c.pending.count} pending</span>`:""}</td>`;
     tr.onclick=()=>openDrawer(c.iso3);
     tb.appendChild(tr);
   });
@@ -434,7 +438,7 @@ function openDrawer(iso){
       html+=`<tr class="${t===2?'tier2':''}">
         <td class="st">${cov?'<span class="yes">●</span>':'<span class="no">○</span>'}</td>
         <td>${ind.label}</td>
-        <td style="text-align:right;color:var(--muted)">${cov?`${rec.latest??""} ${rec.via?`<span class="tag">${rec.via}</span> `:""}${rec.periodicity?`<span class="tag">${rec.periodicity}</span>`:""}`:"no data"}</td>
+        <td style="text-align:right;color:var(--muted)">${cov?`${rec.latest??""} ${rec.via?`<span class="tag">${rec.via}</span> `:""}${perTags(rec.periodicities, rec.periodicity)}`:"no data"}</td>
       </tr>`;
     });
   });
