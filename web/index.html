@@ -465,9 +465,9 @@ function openBreakdown(focus){
   }
   else if(focus==="sources"){
     const map={}; cs.forEach(c=>(c.sources||[]).forEach(s=>map[s.name]=(map[s.name]||0)+1));
-    const a=Object.entries(map).map(([name,n])=>({name,n})).sort((x,y)=>y.n-x.n);
+    const a=Object.entries(map).map(([name,n])=>({name,n})).filter(x=>x.n>1).sort((x,y)=>y.n-x.n);
     title="Data sources";
-    body=`<h4 class="brk-h">Most common survey sources</h4>`+(a.length?rows(a,"var(--frq)"):none("No named sources in this dataset."));
+    body=`<h4 class="brk-h">Most common survey sources</h4>`+(a.length?rows(a,"var(--frq)"):none("No sources used by more than one country."));
   }
   else if(focus==="frequency"){
     const c2={M:0,Q:0,A:0,irregular:0};
