@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-11 13:58",
+  "generated": "2026-08-12 20:02",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -14876,8 +14876,8 @@
       "coverage": 91.5,
       "frequency": 100.0,
       "recency": 100.0,
-      "latest_year": 2025,
-      "latest_period": "2025Q4",
+      "latest_year": 2026,
+      "latest_period": "2026Q1",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -14890,13 +14890,13 @@
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2025
+          "latest": 2026
         }
       ],
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -14906,7 +14906,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -14917,7 +14917,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -14927,7 +14927,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -14938,7 +14938,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -14948,7 +14948,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -14959,7 +14959,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -14970,7 +14970,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -14980,7 +14980,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -14990,7 +14990,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -15000,7 +15000,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -15019,7 +15019,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18126,15 +18126,15 @@
           "latest": 2026
         },
         {
+          "name": "LFS - Labour Force Survey",
+          "latest": 2026
+        },
+        {
           "name": "LFS-ADJ - EU Labour Force Survey adjusted series",
           "latest": 2026
         },
         {
           "name": "HIES - EU Statistics on Income and Living Conditions",
-          "latest": 2025
-        },
-        {
-          "name": "LFS - Labour Force Survey",
           "latest": 2025
         }
       ],
@@ -36767,7 +36767,7 @@
     {
       "iso3": "NRU",
       "country": "Naoero",
-      "region": "Other",
+      "region": "Asia and the Pacific",
       "coverage": 88.1,
       "frequency": 35.0,
       "recency": 90.9,
