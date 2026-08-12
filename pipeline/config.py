@@ -279,7 +279,7 @@ REGIONS = {
     "MNG": "Asia and the Pacific", "MOZ": "Africa", "MRT": "Africa", "MUS": "Africa",
     "MWI": "Africa", "MYS": "Asia and the Pacific", "NAM": "Africa", "NER": "Africa",
     "NGA": "Africa", "NIC": "Americas", "NLD": "Europe and Central Asia",
-    "NOR": "Europe and Central Asia", "NPL": "Asia and the Pacific",
+    "NOR": "Europe and Central Asia", "NPL": "Asia and the Pacific", "NRU": "Asia and the Pacific",
     "NZL": "Asia and the Pacific", "OMN": "Arab States", "PAK": "Asia and the Pacific",
     "PAN": "Americas", "PER": "Americas", "PHL": "Asia and the Pacific",
     "PLW": "Asia and the Pacific", "PNG": "Asia and the Pacific",
