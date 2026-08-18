@@ -1,28 +1,135 @@
 {
-  "_README": "Curated registry of the LATEST labour-force period each National Statistical Office (NSO) has PUBLISHED. The pipeline compares this against ILOSTAT's latest period and lists everything in between as 'pending in ILOSTAT'. Only countries listed here get a pending badge; everything else shows 'not tracked'. Keys are ISO3 codes. Add as many as you like.",
+  "_README": "Curated registry of the LATEST labour-force period each National Statistical Office (NSO) has PUBLISHED. The pipeline compares this against ILOSTAT's latest period and lists everything in between as 'pending in ILOSTAT'. Only countries listed here get a pending badge; everything else shows 'not tracked'. Keys are ISO3 codes.",
   "_schema": {
     "nso": "Name/abbrev of the statistics office (shown in the UI)",
-    "nso_latest": "Latest period the NSO has published: 'YYYY' | 'YYYYQn' | 'YYYYMmm' (e.g. 2026Q2, 2026M06, 2025)",
+    "nso_latest": "Latest period the NSO has published: 'YYYY' | 'YYYYQn' | 'YYYYMmm'",
     "periodicity": "'M' | 'Q' | 'A' — cadence used to enumerate the pending periods",
     "source": "URL to the NSO release / release calendar (shown as a link)",
-    "checked": "YYYY-MM-DD you last verified nso_latest",
-    "note": "optional free text (e.g. survey name)"
+    "checked": "YYYY-MM-DD this entry was last verified against the NSO site",
+    "note": "free text (survey name, cadence quirks, caveats)"
   },
-  "_WARNING": "The nso_latest values below are ILLUSTRATIVE STARTERS to show the feature working. Verify each against the NSO's own site before relying on them, and update 'checked'.",
-
-  "JAM": {"nso": "STATIN", "nso_latest": "2026Q2", "periodicity": "Q", "source": "https://statinja.gov.jm/LabourForce/NewLFS.aspx", "checked": "2026-08-01", "note": "Quarterly Labour Force Survey"},
-  "USA": {"nso": "BLS", "nso_latest": "2026M06", "periodicity": "M", "source": "https://www.bls.gov/cps/", "checked": "2026-08-01", "note": "Current Population Survey (monthly)"},
-  "GBR": {"nso": "ONS", "nso_latest": "2026M05", "periodicity": "M", "source": "https://www.ons.gov.uk/employmentandlabourmarket", "checked": "2026-08-01", "note": "Labour market overview"},
-  "CAN": {"nso": "Statistics Canada", "nso_latest": "2026M06", "periodicity": "M", "source": "https://www150.statcan.gc.ca/n1/daily-quotidien/lfs-epa-eng.htm", "checked": "2026-08-01", "note": "Labour Force Survey (monthly)"},
-  "AUS": {"nso": "ABS", "nso_latest": "2026M06", "periodicity": "M", "source": "https://www.abs.gov.au/statistics/labour", "checked": "2026-08-01", "note": "Labour Force, Australia (monthly)"},
-  "ZAF": {"nso": "Stats SA", "nso_latest": "2026Q1", "periodicity": "Q", "source": "https://www.statssa.gov.za/?page_id=1854&PPN=P0211", "checked": "2026-08-01", "note": "Quarterly Labour Force Survey"},
-  "BRA": {"nso": "IBGE", "nso_latest": "2026Q2", "periodicity": "Q", "source": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html", "checked": "2026-08-01", "note": "PNAD Contínua"},
-  "MEX": {"nso": "INEGI", "nso_latest": "2026Q1", "periodicity": "Q", "source": "https://www.inegi.org.mx/programas/enoe/15ymas/", "checked": "2026-08-01", "note": "ENOE"},
-  "COL": {"nso": "DANE", "nso_latest": "2026M05", "periodicity": "M", "source": "https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo", "checked": "2026-08-01", "note": "GEIH (monthly)"},
-  "CHL": {"nso": "INE", "nso_latest": "2026Q2", "periodicity": "Q", "source": "https://www.ine.gob.cl/estadisticas/sociales/mercado-laboral", "checked": "2026-08-01", "note": "ENE (rolling quarters)"},
-  "IND": {"nso": "MoSPI (NSO)", "nso_latest": "2026Q1", "periodicity": "Q", "source": "https://www.mospi.gov.in/web/mospi/download-tables-data", "checked": "2026-08-01", "note": "Periodic Labour Force Survey (urban quarterly)"},
-  "PHL": {"nso": "PSA", "nso_latest": "2026Q2", "periodicity": "Q", "source": "https://psa.gov.ph/statistics/labor-force-survey", "checked": "2026-08-01", "note": "Labour Force Survey"},
-  "KEN": {"nso": "KNBS", "nso_latest": "2025Q4", "periodicity": "Q", "source": "https://www.knbs.or.ke/", "checked": "2026-08-01", "note": "Quarterly Labour Force Report"},
-  "IDN": {"nso": "BPS", "nso_latest": "2026Q1", "periodicity": "Q", "source": "https://www.bps.go.id/en/subject/6/employment.html", "checked": "2026-08-01", "note": "Sakernas"},
-  "NGA": {"nso": "NBS", "nso_latest": "2025Q4", "periodicity": "Q", "source": "https://nigerianstat.gov.ng/", "checked": "2026-08-01", "note": "Nigeria Labour Force Survey"}
+  "_policy": "Every entry below was verified against an official NSO page. Countries whose correct value is uncertain are NOT listed here — they sit in _parked until resolved, because a wrong pending badge is worse than no badge.",
+  "_last_scan": "2026-08-18",
+  "_parked": {
+    "IND": {
+      "nso": "MoSPI (NSO)",
+      "candidate": "2026M07",
+      "periodicity": "M",
+      "source": "https://www.mospi.gov.in/",
+      "reason": "PLFS moved from quarterly bulletins to a monthly bulletin series during 2025. The June 2026 monthly bulletin was confirmed on PIB, but the July 2026 press note could not be reached on an official domain — only secondary press. Need to confirm the monthly series is the right basis before tracking.",
+      "was": "2026Q1"
+    },
+    "MEX": {
+      "nso": "INEGI",
+      "candidate": "2026M06",
+      "periodicity": "M",
+      "source": "https://www.inegi.org.mx/programas/enoe/15ymas/",
+      "reason": "INEGI runs two parallel tracks: monthly Indicadores de Ocupación y Empleo (latest June 2026) and the quarterly ENOE (latest 2026Q1). Which one ILOSTAT ingests determines the correct basis; picking the wrong one misstates the gap.",
+      "was": "2026Q1"
+    },
+    "IDN": {
+      "nso": "BPS",
+      "candidate": "2026M02",
+      "periodicity": "semi-annual",
+      "source": "https://www.bps.go.id/en/subject/6/employment.html",
+      "reason": "Sakernas has February and August reference months (semi-annual). The registry schema only supports M/Q/A, and encoding it as monthly would enumerate every month in between and badly overstate the pending count. Needs schema support for a semi-annual cadence.",
+      "was": "2026Q1"
+    }
+  },
+  "AUS": {
+    "nso": "Australian Bureau of Statistics",
+    "nso_latest": "2026M06",
+    "periodicity": "M",
+    "source": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
+    "checked": "2026-08-18",
+    "note": "Labour Force, Australia (monthly). June 2026 released 23/07/2026; July 2026 due 20/08/2026."
+  },
+  "BRA": {
+    "nso": "IBGE",
+    "nso_latest": "2026Q2",
+    "periodicity": "Q",
+    "source": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html",
+    "checked": "2026-08-18",
+    "note": "PNAD Contínua Trimestral. 2º trimestre 2026 released 14/08/2026."
+  },
+  "CAN": {
+    "nso": "Statistics Canada",
+    "nso_latest": "2026M07",
+    "periodicity": "M",
+    "source": "https://www150.statcan.gc.ca/n1/daily-quotidien/260807/dq260807a-eng.htm",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, published monthly in The Daily. July 2026 released 07/08/2026."
+  },
+  "CHL": {
+    "nso": "INE",
+    "nso_latest": "2026M06",
+    "periodicity": "M",
+    "source": "https://www.ine.gob.cl/estadisticas/sociales/mercado-laboral",
+    "checked": "2026-08-18",
+    "note": "Encuesta Nacional de Empleo (ENE), published as rolling three-month moving quarters (trimestres móviles) on a monthly cadence. Windows are keyed by their END month: 'abril-junio 2026' = 2026M06 (Edición n°333, 31/07/2026)."
+  },
+  "COL": {
+    "nso": "DANE",
+    "nso_latest": "2026M06",
+    "periodicity": "M",
+    "source": "https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo",
+    "checked": "2026-08-18",
+    "note": "Gran Encuesta Integrada de Hogares (GEIH), monthly. Reference month June 2026, published 31/07/2026."
+  },
+  "GBR": {
+    "nso": "ONS",
+    "nso_latest": "2026Q2",
+    "periodicity": "Q",
+    "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/august2026",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey headline estimates in 'Labour market overview, UK'. Bulletins are monthly but LFS estimates refer to a rolling three-month window; latest is April to June 2026, which aligns with 2026Q2. Payrolled-employees (PAYE RTI) figures run one month later and are admin data, not LFS — deliberately excluded."
+  },
+  "JAM": {
+    "nso": "STATIN",
+    "nso_latest": "2026Q2",
+    "periodicity": "Q",
+    "source": "https://statinja.gov.jm/LabourForce/NewLFS.aspx",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey. Rounds are conducted in Jan/Apr/Jul/Oct and named by survey month; the April 2026 round is the 2026Q2 round. No July 2026 round published as at 18/08/2026."
+  },
+  "KEN": {
+    "nso": "KNBS",
+    "nso_latest": "2022Q4",
+    "periodicity": "Q",
+    "source": "https://www.knbs.or.ke/quarterly-labour-force-reports/",
+    "checked": "2026-08-18",
+    "note": "Quarterly Labour Force Report (QLFS) — modular survey under the Kenya Continuous Household Survey Programme. Ran 2019Q1–2022Q4, discontinued 2023. Being relaunched in 2026 as the Integrated Labour Force Survey (ILFS), starting as a pilot and potentially continuing quarterly; no ILFS results published yet."
+  },
+  "NGA": {
+    "nso": "National Bureau of Statistics",
+    "nso_latest": "2024Q2",
+    "periodicity": "Q",
+    "source": "https://nigerianstat.gov.ng/elibrary",
+    "checked": "2026-08-18",
+    "note": "Nigeria Labour Force Survey (NLFS). Publication is irregular — Q2 2024 is the most recent report in the NBS eLibrary as at 18/08/2026, despite microdata collected later."
+  },
+  "PHL": {
+    "nso": "Philippine Statistics Authority",
+    "nso_latest": "2026M06",
+    "periodicity": "M",
+    "source": "https://psa.gov.ph/statistics/labor-force-survey",
+    "checked": "2026-08-18",
+    "note": "Labor Force Survey, monthly. June 2026 released 06/08/2026 (Ref. No. 2026-255)."
+  },
+  "USA": {
+    "nso": "BLS",
+    "nso_latest": "2026M07",
+    "periodicity": "M",
+    "source": "https://www.bls.gov/news.release/empsit.nr0.htm",
+    "checked": "2026-08-18",
+    "note": "The Employment Situation (Current Population Survey). July 2026 release."
+  },
+  "ZAF": {
+    "nso": "Statistics South Africa",
+    "nso_latest": "2026Q2",
+    "periodicity": "Q",
+    "source": "https://www.statssa.gov.za/?page_id=1854&PPN=P0211",
+    "checked": "2026-08-18",
+    "note": "Quarterly Labour Force Survey (P0211). Q2:2026 released 13/08/2026."
+  }
 }
