@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18 18:29",
+  "generated": "2026-08-18 20:08",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -11683,7 +11683,22 @@
       ],
       "n_covered": 18,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Department of Statistics (DoS)",
+        "nso_latest": "2026Q1",
+        "periodicity": "Q",
+        "periods": [
+          "2025Q1",
+          "2025Q2",
+          "2025Q3",
+          "2025Q4",
+          "2026Q1"
+        ],
+        "count": 5,
+        "source": "https://dosweb.dos.gov.jo/unemp_062026/",
+        "checked": "2026-08-18",
+        "note": "Quarterly Employment and Unemployment Survey. Q1 2026 published 17/06/2026; no Q2 2026 release as at 18/08/2026."
+      },
       "sources": [
         {
           "name": "LFS - Employment and Unemployment Survey",
@@ -20443,7 +20458,18 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Statistical Office of the Republic of Serbia",
+        "nso_latest": "2026Q1",
+        "periodicity": "Q",
+        "periods": [
+          "2026Q1"
+        ],
+        "count": 1,
+        "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+        "checked": "2026-08-18",
+        "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+      },
       "sources": [
         {
           "name": "HIES - Survey on Income and living Conditions",
@@ -32122,7 +32148,20 @@
       ],
       "n_covered": 18,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Central Statistical Organization (COSIT)",
+        "nso_latest": "2024",
+        "periodicity": "A",
+        "periods": [
+          "2022",
+          "2023",
+          "2024"
+        ],
+        "count": 3,
+        "source": "https://cosit.gov.iq/ar/2013-01-31-08-48-55",
+        "checked": "2026-08-18",
+        "note": "No regular labour force survey. Latest labour figures come from the Iraq Household Socio-Economic Survey 2024 (prior reference years 2014, 2016, 2021). A new ILO-supported Labour Force Survey is in preparation but has published no results."
+      },
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
@@ -33094,7 +33133,20 @@
       ],
       "n_covered": 18,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Central Administration of Statistics (CAS)",
+        "nso_latest": "2022",
+        "periodicity": "A",
+        "periods": [
+          "2020",
+          "2021",
+          "2022"
+        ],
+        "count": 3,
+        "source": "https://cas.gov.lb/index.php?Itemid=2&id=100&option=com_content&view=article",
+        "checked": "2026-08-18",
+        "note": "Lebanon Follow-up Labour Force Survey, fieldwork January 2022, published with the ILO in 2022. Publication is ad hoc, not a fixed cadence (previous round LFHLCS 2018-19). No labour force survey published since."
+      },
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
