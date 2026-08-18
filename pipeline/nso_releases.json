@@ -34,7 +34,43 @@
       "source": "https://www.bps.go.id/en/subject/6/employment.html",
       "reason": "Sakernas has February and August reference months (semi-annual). The registry schema only supports M/Q/A, and encoding it as monthly would enumerate every month in between and badly overstate the pending count. Needs schema support for a semi-annual cadence.",
       "was": "2026Q1"
+    },
+    "BHR": {
+      "nso": "LMRA / Information & eGovernment Authority",
+      "candidate": "2024Q2",
+      "periodicity": "Q",
+      "source": "https://www.lmra.gov.bh/en/page/show/223",
+      "reason": "The only current Bahraini source is the LMRA quarterly 'Labour Market Indicators', which is ADMINISTRATIVE work-permit data, not a household labour force survey. Wrong source family for the LFS index — it belongs to the Admin index if anywhere. The iGA household unemployment dataset on data.gov.bh is JS-rendered and robots-blocked, so no LFS period could be established."
+    },
+    "KWT": {
+      "nso": "Central Statistical Bureau (CSB)",
+      "candidate": "2017",
+      "periodicity": "A",
+      "source": "https://www.csb.gov.kw/Pages/Statistics?ID=64&ParentCatID=1",
+      "reason": "Latest LFS round appears to be 2016/2017, but the CSB page shows only publication listings (title, year, download count) rather than figures, and the LMIS portal could not be fetched. Confidence medium, not high."
+    },
+    "ALB": {
+      "nso": "INSTAT Albania",
+      "candidate": null,
+      "periodicity": "Q",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+      "reason": "No Albanian observations present in Eurostat lfsi_emp_q (value object empty across the last 20 quarters). Needs a direct INSTAT check."
+    },
+    "MNE": {
+      "nso": "MONSTAT",
+      "candidate": null,
+      "periodicity": "Q",
+      "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+      "reason": "No Montenegrin observations present in Eurostat lfsi_emp_q (value object empty across the last 20 quarters). Needs a direct MONSTAT check."
     }
+  },
+  "ARE": {
+    "nso": "Federal Competitiveness and Statistics Centre (FCSC)",
+    "nso_latest": "2024",
+    "periodicity": "A",
+    "source": "https://fcsc.gov.ae/en-us/Pages/Statistics/Statistics-by-Subject.aspx",
+    "checked": "2026-08-18",
+    "note": "Annual labour force series on UAE.STAT. Headline unemployment rate published for reference year 2024; no 2025 figures published as at 18/08/2026."
   },
   "AUS": {
     "nso": "Australian Bureau of Statistics",
@@ -43,6 +79,30 @@
     "source": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
     "checked": "2026-08-18",
     "note": "Labour Force, Australia (monthly). June 2026 released 23/07/2026; July 2026 due 20/08/2026."
+  },
+  "AUT": {
+    "nso": "Statistics Austria",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "BEL": {
+    "nso": "Statbel",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "BGR": {
+    "nso": "NSI Bulgaria",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
   },
   "BRA": {
     "nso": "IBGE",
@@ -60,6 +120,14 @@
     "checked": "2026-08-18",
     "note": "Labour Force Survey, published monthly in The Daily. July 2026 released 07/08/2026."
   },
+  "CHE": {
+    "nso": "Swiss Federal Statistical Office",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
   "CHL": {
     "nso": "INE",
     "nso_latest": "2026M06",
@@ -76,6 +144,70 @@
     "checked": "2026-08-18",
     "note": "Gran Encuesta Integrada de Hogares (GEIH), monthly. Reference month June 2026, published 31/07/2026."
   },
+  "CYP": {
+    "nso": "CYSTAT",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "CZE": {
+    "nso": "Czech Statistical Office",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "DEU": {
+    "nso": "Destatis",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "DNK": {
+    "nso": "Statistics Denmark",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "ESP": {
+    "nso": "INE Spain",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "EST": {
+    "nso": "Statistics Estonia",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "FIN": {
+    "nso": "Statistics Finland",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "FRA": {
+    "nso": "INSEE",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
   "GBR": {
     "nso": "ONS",
     "nso_latest": "2026Q2",
@@ -83,6 +215,62 @@
     "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/august2026",
     "checked": "2026-08-18",
     "note": "Labour Force Survey headline estimates in 'Labour market overview, UK'. Bulletins are monthly but LFS estimates refer to a rolling three-month window; latest is April to June 2026, which aligns with 2026Q2. Payrolled-employees (PAYE RTI) figures run one month later and are admin data, not LFS — deliberately excluded."
+  },
+  "GRC": {
+    "nso": "ELSTAT",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "HRV": {
+    "nso": "Croatian Bureau of Statistics",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "HUN": {
+    "nso": "KSH",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "IRL": {
+    "nso": "CSO Ireland",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "IRQ": {
+    "nso": "Central Statistical Organization (COSIT)",
+    "nso_latest": "2024",
+    "periodicity": "A",
+    "source": "https://cosit.gov.iq/ar/2013-01-31-08-48-55",
+    "checked": "2026-08-18",
+    "note": "No regular labour force survey. Latest labour figures come from the Iraq Household Socio-Economic Survey 2024 (prior reference years 2014, 2016, 2021). A new ILO-supported Labour Force Survey is in preparation but has published no results."
+  },
+  "ISL": {
+    "nso": "Statistics Iceland",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "ITA": {
+    "nso": "Istat",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
   },
   "JAM": {
     "nso": "STATIN",
@@ -92,6 +280,14 @@
     "checked": "2026-08-18",
     "note": "Labour Force Survey. Rounds are conducted in Jan/Apr/Jul/Oct and named by survey month; the April 2026 round is the 2026Q2 round. No July 2026 round published as at 18/08/2026."
   },
+  "JOR": {
+    "nso": "Department of Statistics (DoS)",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://dosweb.dos.gov.jo/unemp_062026/",
+    "checked": "2026-08-18",
+    "note": "Quarterly Employment and Unemployment Survey. Q1 2026 published 17/06/2026; no Q2 2026 release as at 18/08/2026."
+  },
   "KEN": {
     "nso": "KNBS",
     "nso_latest": "2022Q4",
@@ -99,6 +295,54 @@
     "source": "https://www.knbs.or.ke/quarterly-labour-force-reports/",
     "checked": "2026-08-18",
     "note": "Quarterly Labour Force Report (QLFS) — modular survey under the Kenya Continuous Household Survey Programme. Ran 2019Q1–2022Q4, discontinued 2023. Being relaunched in 2026 as the Integrated Labour Force Survey (ILFS), starting as a pilot and potentially continuing quarterly; no ILFS results published yet."
+  },
+  "LBN": {
+    "nso": "Central Administration of Statistics (CAS)",
+    "nso_latest": "2022",
+    "periodicity": "A",
+    "source": "https://cas.gov.lb/index.php?Itemid=2&id=100&option=com_content&view=article",
+    "checked": "2026-08-18",
+    "note": "Lebanon Follow-up Labour Force Survey, fieldwork January 2022, published with the ILO in 2022. Publication is ad hoc, not a fixed cadence (previous round LFHLCS 2018-19). No labour force survey published since."
+  },
+  "LTU": {
+    "nso": "Statistics Lithuania",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "LUX": {
+    "nso": "STATEC",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "LVA": {
+    "nso": "Central Statistical Bureau of Latvia",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "MKD": {
+    "nso": "State Statistical Office of North Macedonia",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "MLT": {
+    "nso": "NSO Malta",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
   },
   "NGA": {
     "nso": "National Bureau of Statistics",
@@ -108,6 +352,22 @@
     "checked": "2026-08-18",
     "note": "Nigeria Labour Force Survey (NLFS). Publication is irregular — Q2 2024 is the most recent report in the NBS eLibrary as at 18/08/2026, despite microdata collected later."
   },
+  "NLD": {
+    "nso": "CBS Netherlands",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "NOR": {
+    "nso": "Statistics Norway",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
   "PHL": {
     "nso": "Philippine Statistics Authority",
     "nso_latest": "2026M06",
@@ -115,6 +375,70 @@
     "source": "https://psa.gov.ph/statistics/labor-force-survey",
     "checked": "2026-08-18",
     "note": "Labor Force Survey, monthly. June 2026 released 06/08/2026 (Ref. No. 2026-255)."
+  },
+  "POL": {
+    "nso": "Statistics Poland (GUS)",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "PRT": {
+    "nso": "Statistics Portugal (INE)",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "ROU": {
+    "nso": "National Institute of Statistics (INS)",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "SRB": {
+    "nso": "Statistical Office of the Republic of Serbia",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "SVK": {
+    "nso": "Statistical Office of the Slovak Republic",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "SVN": {
+    "nso": "SURS",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "SWE": {
+    "nso": "Statistics Sweden (SCB)",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
+  },
+  "TUR": {
+    "nso": "TurkStat",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
   },
   "USA": {
     "nso": "BLS",
