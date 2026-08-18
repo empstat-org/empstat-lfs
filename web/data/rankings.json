@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17 22:32",
+  "generated": "2026-08-18 18:29",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -1016,7 +1016,7 @@
       "n_covered": 17,
       "n_total": 19,
       "pending": {
-        "nso": "ABS",
+        "nso": "Australian Bureau of Statistics",
         "nso_latest": "2026M06",
         "periodicity": "M",
         "periods": [
@@ -1025,9 +1025,9 @@
           "2026M06"
         ],
         "count": 3,
-        "source": "https://www.abs.gov.au/statistics/labour",
-        "checked": "2026-08-01",
-        "note": "Labour Force, Australia (monthly)"
+        "source": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
+        "checked": "2026-08-18",
+        "note": "Labour Force, Australia (monthly). June 2026 released 23/07/2026; July 2026 due 20/08/2026."
       },
       "sources": [
         {
@@ -2987,8 +2987,8 @@
         ],
         "count": 1,
         "source": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9173-pesquisa-nacional-por-amostra-de-domicilios-continua-trimestral.html",
-        "checked": "2026-08-01",
-        "note": "PNAD Contínua"
+        "checked": "2026-08-18",
+        "note": "PNAD Contínua Trimestral. 2º trimestre 2026 released 14/08/2026."
       },
       "sources": [
         {
@@ -3834,7 +3834,18 @@
       ],
       "n_covered": 16,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Statistics Canada",
+        "nso_latest": "2026M07",
+        "periodicity": "M",
+        "periods": [
+          "2026M07"
+        ],
+        "count": 1,
+        "source": "https://www150.statcan.gc.ca/n1/daily-quotidien/260807/dq260807a-eng.htm",
+        "checked": "2026-08-18",
+        "note": "Labour Force Survey, published monthly in The Daily. July 2026 released 07/08/2026."
+      },
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
@@ -4263,7 +4274,19 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "INE",
+        "nso_latest": "2026M06",
+        "periodicity": "M",
+        "periods": [
+          "2026M05",
+          "2026M06"
+        ],
+        "count": 2,
+        "source": "https://www.ine.gob.cl/estadisticas/sociales/mercado-laboral",
+        "checked": "2026-08-18",
+        "note": "Encuesta Nacional de Empleo (ENE), published as rolling three-month moving quarters (trimestres móviles) on a monthly cadence. Windows are keyed by their END month: 'abril-junio 2026' = 2026M06 (Edición n°333, 31/07/2026)."
+      },
       "sources": [
         {
           "name": "LFS - National Employment Survey",
@@ -4487,7 +4510,18 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "DANE",
+        "nso_latest": "2026M06",
+        "periodicity": "M",
+        "periods": [
+          "2026M06"
+        ],
+        "count": 1,
+        "source": "https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo",
+        "checked": "2026-08-18",
+        "note": "Gran Encuesta Integrada de Hogares (GEIH), monthly. Reference month June 2026, published 31/07/2026."
+      },
       "sources": [
         {
           "name": "LFS - Integrated Household Survey",
@@ -7755,16 +7789,15 @@
       "n_total": 19,
       "pending": {
         "nso": "ONS",
-        "nso_latest": "2026M05",
-        "periodicity": "M",
+        "nso_latest": "2026Q2",
+        "periodicity": "Q",
         "periods": [
-          "2026M04",
-          "2026M05"
+          "2026Q2"
         ],
-        "count": 2,
-        "source": "https://www.ons.gov.uk/employmentandlabourmarket",
-        "checked": "2026-08-01",
-        "note": "Labour market overview"
+        "count": 1,
+        "source": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/uklabourmarket/august2026",
+        "checked": "2026-08-18",
+        "note": "Labour Force Survey headline estimates in 'Labour market overview, UK'. Bulletins are monthly but LFS estimates refer to a rolling three-month window; latest is April to June 2026, which aligns with 2026Q2. Payrolled-employees (PAYE RTI) figures run one month later and are admin data, not LFS — deliberately excluded."
       },
       "sources": [
         {
@@ -9924,27 +9957,7 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": {
-        "nso": "BPS",
-        "nso_latest": "2026Q1",
-        "periodicity": "Q",
-        "periods": [
-          "2023Q4",
-          "2024Q1",
-          "2024Q2",
-          "2024Q3",
-          "2024Q4",
-          "2025Q1",
-          "2025Q2",
-          "2025Q3",
-          "2025Q4",
-          "2026Q1"
-        ],
-        "count": 10,
-        "source": "https://www.bps.go.id/en/subject/6/employment.html",
-        "checked": "2026-08-01",
-        "note": "Sakernas"
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - National Labour Force Survey",
@@ -10153,18 +10166,7 @@
       ],
       "n_covered": 15,
       "n_total": 19,
-      "pending": {
-        "nso": "MoSPI (NSO)",
-        "nso_latest": "2026Q1",
-        "periodicity": "Q",
-        "periods": [
-          "2026Q1"
-        ],
-        "count": 1,
-        "source": "https://www.mospi.gov.in/web/mospi/download-tables-data",
-        "checked": "2026-08-01",
-        "note": "Periodic Labour Force Survey (urban quarterly)"
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Periodic Labour Force Survey",
@@ -11470,8 +11472,8 @@
         ],
         "count": 10,
         "source": "https://statinja.gov.jm/LabourForce/NewLFS.aspx",
-        "checked": "2026-08-01",
-        "note": "Quarterly Labour Force Survey"
+        "checked": "2026-08-18",
+        "note": "Labour Force Survey. Rounds are conducted in Jan/Apr/Jul/Oct and named by survey month; the April 2026 round is the 2026Q2 round. No July 2026 round published as at 18/08/2026."
       },
       "sources": [
         {
@@ -12296,30 +12298,18 @@
       "n_total": 19,
       "pending": {
         "nso": "KNBS",
-        "nso_latest": "2025Q4",
+        "nso_latest": "2022Q4",
         "periodicity": "Q",
         "periods": [
           "2022Q1",
           "2022Q2",
           "2022Q3",
-          "2022Q4",
-          "2023Q1",
-          "2023Q2",
-          "2023Q3",
-          "2023Q4",
-          "2024Q1",
-          "2024Q2",
-          "2024Q3",
-          "2024Q4",
-          "2025Q1",
-          "2025Q2",
-          "2025Q3",
-          "2025Q4"
+          "2022Q4"
         ],
-        "count": 16,
-        "source": "https://www.knbs.or.ke/",
-        "checked": "2026-08-01",
-        "note": "Quarterly Labour Force Report"
+        "count": 4,
+        "source": "https://www.knbs.or.ke/quarterly-labour-force-reports/",
+        "checked": "2026-08-18",
+        "note": "Quarterly Labour Force Report (QLFS) — modular survey under the Kenya Continuous Household Survey Programme. Ran 2019Q1–2022Q4, discontinued 2023. Being relaunched in 2026 as the Integrated Labour Force Survey (ILFS), starting as a pilot and potentially continuing quarterly; no ILFS results published yet."
       },
       "sources": [
         {
@@ -16358,21 +16348,7 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": {
-        "nso": "NBS",
-        "nso_latest": "2025Q4",
-        "periodicity": "Q",
-        "periods": [
-          "2025Q1",
-          "2025Q2",
-          "2025Q3",
-          "2025Q4"
-        ],
-        "count": 4,
-        "source": "https://nigerianstat.gov.ng/",
-        "checked": "2026-08-01",
-        "note": "Nigeria Labour Force Survey"
-      },
+      "pending": null,
       "sources": [
         {
           "name": "HS - General Household Survey",
@@ -17887,24 +17863,42 @@
       "n_covered": 16,
       "n_total": 19,
       "pending": {
-        "nso": "PSA",
-        "nso_latest": "2026Q2",
-        "periodicity": "Q",
+        "nso": "Philippine Statistics Authority",
+        "nso_latest": "2026M06",
+        "periodicity": "M",
         "periods": [
-          "2024Q2",
-          "2024Q3",
-          "2024Q4",
-          "2025Q1",
-          "2025Q2",
-          "2025Q3",
-          "2025Q4",
-          "2026Q1",
-          "2026Q2"
+          "2024M04",
+          "2024M05",
+          "2024M06",
+          "2024M07",
+          "2024M08",
+          "2024M09",
+          "2024M10",
+          "2024M11",
+          "2024M12",
+          "2025M01",
+          "2025M02",
+          "2025M03",
+          "2025M04",
+          "2025M05",
+          "2025M06",
+          "2025M07",
+          "2025M08",
+          "2025M09",
+          "2025M10",
+          "2025M11",
+          "2025M12",
+          "2026M01",
+          "2026M02",
+          "2026M03",
+          "2026M04",
+          "2026M05",
+          "2026M06"
         ],
-        "count": 9,
+        "count": 27,
         "source": "https://psa.gov.ph/statistics/labor-force-survey",
-        "checked": "2026-08-01",
-        "note": "Labour Force Survey"
+        "checked": "2026-08-18",
+        "note": "Labor Force Survey, monthly. June 2026 released 06/08/2026 (Ref. No. 2026-255)."
       },
       "sources": [
         {
