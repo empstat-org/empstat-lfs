@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19 07:35",
+  "generated": "2026-08-19 08:12",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -8999,7 +8999,22 @@
       ],
       "n_covered": 16,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Central Statistical Office",
+        "nso_latest": "2025Q2",
+        "periodicity": "Q",
+        "periods": [
+          "2024Q2",
+          "2024Q3",
+          "2024Q4",
+          "2025Q1",
+          "2025Q2"
+        ],
+        "count": 5,
+        "source": "https://stats.gov.gd/subjects/labour-market/",
+        "checked": "2026-08-18",
+        "note": "Quarterly National Labour Force Survey, 'Results Basic Tables'. Q2 2025 released October 2025; quarterly series runs 2013-2025 with gaps. No later release found."
+      },
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
@@ -13372,7 +13387,18 @@
       ],
       "n_covered": 16,
       "n_total": 19,
-      "pending": null,
+      "pending": {
+        "nso": "Central Statistical Office",
+        "nso_latest": "2026Q1",
+        "periodicity": "Q",
+        "periods": [
+          "2026Q1"
+        ],
+        "count": 1,
+        "source": "https://stats.gov.lc/publications/",
+        "checked": "2026-08-18",
+        "note": "Quarterly Labour Force Survey with a continuous dissemination programme — the most current NSO in the Eastern Caribbean. Q1 2026 released June 2026. CSO notes some historical LFS tables around 2020 are misaligned and under correction."
+      },
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
