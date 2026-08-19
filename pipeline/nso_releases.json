@@ -212,6 +212,61 @@
       "nso": "Ufficio Statistica",
       "candidate": null,
       "reason": "NO labour force survey exists. San Marino publishes labour statistics derived from Ufficio del Lavoro administrative registers."
+    },
+    "KIR": {
+      "nso": "Kiribati NSO",
+      "candidate": "2023",
+      "reason": "No standalone LFS. Labour figures come from the HIES 2023-24 labour force module ('Kiribati Labour Market Monograph 2023-2024'). HIES-derived rather than a labour force survey — decide whether that qualifies."
+    },
+    "VEN": {
+      "nso": "INE Venezuela",
+      "candidate": "2023",
+      "reason": "INE stopped regular Encuesta de Hogares por Muestreo labour bulletins around 2015. A back-series workbook 'TRABAJO-2001-2023.xls' was uploaded to ine.gob.ve in April 2026 covering through 2023, but there are no periodic releases or methodological notes and the within-year reference could not be confirmed."
+    },
+    "DMA": {
+      "nso": "Central Statistical Office",
+      "candidate": "1999",
+      "reason": "Only LFS reports published are 1997 and 1999. The CSO states annual LFS microdata exist for 2013-2017 and quarterly surveys began July 2018, but no results were ever published. The newer 2011 tables on the site are POPULATION CENSUS tabulations, not LFS."
+    },
+    "HTI": {
+      "nso": "IHSI",
+      "candidate": "2007",
+      "reason": "No labour force survey programme operating. Last dedicated employment survey is the EEEI, reference year 2007. IHSI's publication lists show nothing on emploi/chomage; the 2012 ECVMAS is a living-conditions survey with a labour module, not an LFS."
+    },
+    "KNA": {
+      "nso": "Department of Statistics",
+      "candidate": null,
+      "reason": "No published LFS RESULTS located. The only 2015 LFS artefact on the site is the household QUESTIONNAIRE, not a results report. The labour topic page is JavaScript-gated and returned nothing."
+    },
+    "FSM": {
+      "nso": "FSM Statistics Division",
+      "candidate": null,
+      "reason": "No labour force survey. The Labor Market page carries employment-by-institution and wage tables to FY22, but these are administrative/social-security counts. Underlying labour indicators trace to the 2010 census and 2013/14 HIES."
+    },
+    "MHL": {
+      "nso": "EPPSO",
+      "candidate": null,
+      "reason": "CENSUS-DERIVED ONLY — no LFS exists. Latest economic-activity figures are from the 2021 Population and Housing Census."
+    },
+    "NRU": {
+      "nso": "Nauru Bureau of Statistics",
+      "candidate": null,
+      "reason": "CENSUS-DERIVED ONLY — no LFS. Latest employment data from the 2021 census. A 2024-25 HIES report exists but publishes no separate labour force reference period."
+    },
+    "PLW": {
+      "nso": "Bureau of Budget and Planning",
+      "candidate": null,
+      "reason": "CENSUS-DERIVED ONLY — no LFS. The official Labor Market Statistics page publishes one table for census years 1995, 2000, 2005, 2015."
+    },
+    "SLB": {
+      "nso": "Solomon Islands NSO",
+      "candidate": null,
+      "reason": "CENSUS-DERIVED ONLY — no LFS. Latest labour data from the 2019 census. HIES 2024-25 fieldwork is complete but no results published."
+    },
+    "TUV": {
+      "nso": "Central Statistics Division",
+      "candidate": null,
+      "reason": "No labour force survey. The site has a 'Labour Force Statistics' category but it is completely EMPTY. Only a 2022-23 census and HIES exist, neither with published labour output."
     }
   },
   "ARE": {
@@ -237,6 +292,14 @@
     "source": "https://www.armstat.am/en/?nid=82&id=2787",
     "checked": "2026-08-18",
     "note": "Annual labour-market compendium 'Labour Market in Armenia, 2025', based on the Labour Force Survey. armstat.am robots.txt returns HTTP 500 so the page is only reachable via a browser."
+  },
+  "ATG": {
+    "nso": "Statistics Division, Ministry of Finance",
+    "nso_latest": "2018",
+    "periodicity": "A",
+    "source": "https://statistics.gov.ag/",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey; last published round is 2018 (fieldwork 22/10-30/11/2018). A 2023 LFS appeared in an ILO catalogue but no results are published on the NSO site. The 2025 population census is a different source family and is not counted."
   },
   "AUS": {
     "nso": "Australian Bureau of Statistics",
@@ -486,6 +549,14 @@
     "checked": "2026-08-18",
     "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
   },
+  "GRD": {
+    "nso": "Central Statistical Office",
+    "nso_latest": "2025Q2",
+    "periodicity": "Q",
+    "source": "https://stats.gov.gd/subjects/labour-market/",
+    "checked": "2026-08-18",
+    "note": "Quarterly National Labour Force Survey, 'Results Basic Tables'. Q2 2025 released October 2025; quarterly series runs 2013-2025 with gaps. No later release found."
+  },
   "GTM": {
     "nso": "INE Guatemala",
     "nso_latest": "2025Q4",
@@ -621,6 +692,14 @@
     "source": "https://cas.gov.lb/index.php?Itemid=2&id=100&option=com_content&view=article",
     "checked": "2026-08-18",
     "note": "Lebanon Follow-up Labour Force Survey, fieldwork January 2022, published with the ILO in 2022. Publication is ad hoc, not a fixed cadence (previous round LFHLCS 2018-19). No labour force survey published since."
+  },
+  "LCA": {
+    "nso": "Central Statistical Office",
+    "nso_latest": "2026Q1",
+    "periodicity": "Q",
+    "source": "https://stats.gov.lc/publications/",
+    "checked": "2026-08-18",
+    "note": "Quarterly Labour Force Survey with a continuous dissemination programme — the most current NSO in the Eastern Caribbean. Q1 2026 released June 2026. CSO notes some historical LFS tables around 2020 are misaligned and under correction."
   },
   "LKA": {
     "nso": "Department of Census and Statistics",
@@ -870,6 +949,14 @@
     "checked": "2026-08-18",
     "note": "Labour Force Survey (Обследование рабочей силы, ОРС), annual results tables for 2025. Separate monthly stat.tj releases are administrative (registered unemployed) and are not an LFS."
   },
+  "TON": {
+    "nso": "Tonga Statistics Department",
+    "nso_latest": "2023",
+    "periodicity": "A",
+    "source": "https://tongastats.gov.to/survey/labour-force-survey/",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey. Irregular, roughly every 5 years (2003, 2018, 2023). The 2023 report was launched 19/12/2024."
+  },
   "TTO": {
     "nso": "Central Statistical Office",
     "nso_latest": "2026Q1",
@@ -933,6 +1020,30 @@
     "source": "https://www.bls.gov/news.release/empsit.nr0.htm",
     "checked": "2026-08-18",
     "note": "The Employment Situation (Current Population Survey). July 2026 release."
+  },
+  "VCT": {
+    "nso": "Statistical Office, Government of SVG",
+    "nso_latest": "2022",
+    "periodicity": "A",
+    "source": "https://finance.gov.vc/",
+    "checked": "2026-08-18",
+    "note": "Labour Force Survey; latest published round is 2022 (final report hosted on the Ministry of Finance site, which the Statistical Office sits within). Earlier rounds 2019 and 2015. The Statistical Office's own data tables still show 2015/2017."
+  },
+  "VUT": {
+    "nso": "Vanuatu Bureau of Statistics",
+    "nso_latest": "2025",
+    "periodicity": "A",
+    "source": "https://vbos.gov.vu/index.php/en/census-and-surveys/survey-reports",
+    "checked": "2026-08-18",
+    "note": "Vanuatu's FIRST-EVER standalone Labour Force Survey, reference year 2025 (fieldwork Jun-Jul 2025). Periodicity not yet established — one-off so far. Prior labour data came from the 2020 HIES labour module."
+  },
+  "WSM": {
+    "nso": "Samoa Bureau of Statistics",
+    "nso_latest": "2022",
+    "periodicity": "A",
+    "source": "https://www.sbs.gov.ws/labour-force-survey/",
+    "checked": "2026-08-18",
+    "note": "Samoa Labour Force and Child Labour Survey. Irregular, roughly 5-yearly (2012, 2017, 2022). The 2022 report was launched January 2024."
   },
   "ZAF": {
     "nso": "Statistics South Africa",
