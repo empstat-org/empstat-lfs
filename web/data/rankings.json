@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19 08:12",
+  "generated": "2026-08-24 22:29",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -2485,7 +2485,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -2504,7 +2504,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -2513,7 +2513,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -2522,7 +2522,7 @@
         },
         "EMP_TEMP_SEX_AGE_CCT_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -2531,7 +2531,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -2547,7 +2547,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -9434,10 +9434,10 @@
       "country": "Guyana",
       "region": "Americas",
       "coverage": 96.6,
-      "frequency": 67.5,
-      "recency": 63.6,
-      "latest_year": 2021,
-      "latest_period": "2021Q3",
+      "frequency": 72.5,
+      "recency": 90.9,
+      "latest_year": 2024,
+      "latest_period": "2024",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -9450,25 +9450,12 @@
         "nso_latest": "2025Q4",
         "periodicity": "Q",
         "periods": [
-          "2021Q4",
-          "2022Q1",
-          "2022Q2",
-          "2022Q3",
-          "2022Q4",
-          "2023Q1",
-          "2023Q2",
-          "2023Q3",
-          "2023Q4",
-          "2024Q1",
-          "2024Q2",
-          "2024Q3",
-          "2024Q4",
           "2025Q1",
           "2025Q2",
           "2025Q3",
           "2025Q4"
         ],
-        "count": 17,
+        "count": 4,
         "source": "https://statisticsguyana.gov.gy/",
         "checked": "2026-08-18",
         "note": "Guyana Labour Force Survey, quarterly. Q4 2025 bulletin uploaded July 2026 (roughly a two-quarter lag). The survey was suspended and recommenced in November 2024."
@@ -9476,7 +9463,7 @@
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2021
+          "latest": 2024
         },
         {
           "name": "HS - Statistical Yearbook",
@@ -9486,7 +9473,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9496,7 +9483,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9506,7 +9493,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9516,7 +9503,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9526,7 +9513,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9536,7 +9523,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9546,7 +9533,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9556,7 +9543,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9566,7 +9553,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9576,7 +9563,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9586,7 +9573,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9596,7 +9583,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -9605,7 +9592,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9615,7 +9602,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -9624,7 +9611,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -9642,7 +9629,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -9658,7 +9645,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2021,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -12947,7 +12934,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026Q2",
+      "latest_period": "2026M07",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -12956,18 +12943,7 @@
       ],
       "n_covered": 17,
       "n_total": 19,
-      "pending": {
-        "nso": "Statistics Korea / National Data Office",
-        "nso_latest": "2026M07",
-        "periodicity": "M",
-        "periods": [
-          "2026M07"
-        ],
-        "count": 1,
-        "source": "https://mods.go.kr/menu.es?mid=a10301030100",
-        "checked": "2026-08-18",
-        "note": "Economically Active Population Survey, monthly ('고용동향' Employment Trends). NOTE: KOSTAT was reorganised into the National Data Office and the press board moved to mods.go.kr; kostat.go.kr boards remain robots-blocked."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Economically Active Population Survey",
@@ -18695,7 +18671,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026M06",
+      "latest_period": "2026Q2",
       "best_periodicity": "M",
       "periodicities": [
         "M",
