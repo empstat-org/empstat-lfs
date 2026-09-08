@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01 01:10",
+  "generated": "2026-09-08 00:03",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -14924,7 +14924,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026Q1",
+      "latest_period": "2026Q2",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -15060,7 +15060,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -15079,7 +15079,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -15088,7 +15088,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -15097,7 +15097,7 @@
         },
         "EMP_TEMP_SEX_AGE_CCT_NB": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -15106,7 +15106,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -15124,7 +15124,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2026,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
