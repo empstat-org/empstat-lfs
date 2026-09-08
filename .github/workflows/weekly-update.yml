@@ -42,7 +42,23 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add web/data
-          if git diff --cached --quiet; then echo "No data changes this week."; else git commit -m "Weekly ILOSTAT update ($(date -u +%Y-%m-%d))"; git push; fi
+          if git diff --cached --quiet; then
+            echo "No data changes this week."
+            exit 0
+          fi
+          git commit -m "Weekly ILOSTAT update ($(date -u +%Y-%m-%d))"
+          # The checkout is pinned to the commit that was current when this run was
+          # *queued*, so main may have moved on by now (e.g. a manual push, or another
+          # run). Replay our data commit on top of the latest main before pushing,
+          # keeping our freshly generated files if the same files changed upstream.
+          for attempt in 1 2 3; do
+            git fetch origin main
+            git rebase -X theirs origin/main && git push origin HEAD:main && exit 0
+            echo "Push attempt $attempt failed, retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          echo "Could not push after 3 attempts"; exit 1
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
