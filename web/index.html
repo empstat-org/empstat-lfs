@@ -349,16 +349,25 @@ function computeRanked(){
     if(state.q && !c.country.toLowerCase().includes(state.q) && !c.iso3.toLowerCase().includes(state.q)) return false;
     return true;
   });
-  // always rank by overall to assign rank numbers (global), then sort for display
-  const byOverall = [...rows].sort((a,b)=>b.overall-a.overall);
-  const rankOf = {}; byOverall.forEach((c,i)=>rankOf[c.iso3]=i+1);
-  f.forEach(c=>c.rank=rankOf[c.iso3]);
+  // always rank by overall to assign rank numbers (global), then sort for display.
+  // Countries whose displayed score (1 dp) is equal share the same rank, and the
+  // next rank skips accordingly (standard competition ranking: 1, 1, 1, 4, ...).
+  const byOverall = [...rows].sort((a,b)=>b.overall-a.overall || (a.country||"").localeCompare(b.country||""));
+  const rankOf = {}, rankCount = {};
+  let prevScore = null, prevRank = 0;
+  byOverall.forEach((c,i)=>{
+    const s = fmt(c.overall);                 // tie on the score as shown in the table
+    const r = (s === prevScore) ? prevRank : i+1;
+    rankOf[c.iso3] = r; rankCount[r] = (rankCount[r]||0) + 1;
+    prevScore = s; prevRank = r;
+  });
+  f.forEach(c=>{ c.rank = rankOf[c.iso3]; c.tied = rankCount[c.rank] > 1; });
   const k=state.sortKey, dir=state.sortDir;
   f.sort((a,b)=>{
     let av=a[k], bv=b[k];
     if(k==="country"||k==="region"){av=(av||"").toLowerCase();bv=(bv||"").toLowerCase();return av<bv?-dir:av>bv?dir:0;}
     av=av==null?-1:av; bv=bv==null?-1:bv;
-    return (av-bv)*dir;
+    return (av-bv)*dir || (a.country||"").localeCompare(b.country||"");   // tie-break alphabetically
   });
   return f;
 }
@@ -376,7 +385,7 @@ function render(){
     const tr=document.createElement("tr");
     tr.className="country-row"; tr.dataset.iso=c.iso3;
     tr.innerHTML=`
-      <td class="rank">${c.rank}</td>
+      <td class="rank">${c.tied?"=":""}${c.rank}</td>
       <td class="name">${c.country}</td>
       <td class="region">${c.region}</td>
       <td class="scorecell">${scoreBar(c.overall, scoreColor(c.overall))}</td>
@@ -398,7 +407,8 @@ function openDrawer(iso){
   const c = D.countries.find(x=>x.iso3===iso);
   const ov = overall(c);
   $("#dName").textContent = c.country;
-  $("#dSub").textContent = `${c.region} · ${c.iso3} · rank #${computeRanked().find(x=>x.iso3===iso)?.rank ?? "—"} of ${D.countries.length}`;
+  const rk = computeRanked().find(x=>x.iso3===iso);
+  $("#dSub").textContent = `${c.region} · ${c.iso3} · ${rk?.tied?"joint ":""}rank #${rk?.rank ?? "—"} of ${D.countries.length}`;
   const kpi=(n,l,col)=>`<div class="kpi"><div class="n" style="color:${col}">${fmt(n)}</div><div class="l">${l}</div></div>`;
   const p=c.pending;
   let pendHTML="";
