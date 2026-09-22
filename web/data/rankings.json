@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15 00:27",
+  "generated": "2026-09-22 00:43",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -148,10 +148,10 @@
       "country": "Angola",
       "region": "Africa",
       "coverage": 96.6,
-      "frequency": 77.5,
+      "frequency": 82.5,
       "recency": 100.0,
-      "latest_year": 2025,
-      "latest_period": "2025Q4",
+      "latest_year": 2026,
+      "latest_period": "2026Q1",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -163,7 +163,7 @@
       "sources": [
         {
           "name": "LFS - Employment Survey",
-          "latest": 2025
+          "latest": 2026
         },
         {
           "name": "HIES - Survey on Expenditure, Revenue and Employment",
@@ -177,7 +177,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -187,7 +187,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -197,7 +197,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -207,7 +207,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -217,7 +217,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -227,7 +227,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -237,7 +237,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -247,7 +247,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -257,7 +257,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -267,7 +267,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -277,7 +277,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -296,7 +296,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2338,10 +2338,10 @@
       "country": "Bosnia and Herzegovina",
       "region": "Europe and Central Asia",
       "coverage": 96.6,
-      "frequency": 92.5,
+      "frequency": 97.5,
       "recency": 100.0,
-      "latest_year": 2025,
-      "latest_period": "2025Q3",
+      "latest_year": 2026,
+      "latest_period": "2026Q1",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -2349,23 +2349,11 @@
       ],
       "n_covered": 18,
       "n_total": 19,
-      "pending": {
-        "nso": "Agency for Statistics of Bosnia and Herzegovina",
-        "nso_latest": "2026Q1",
-        "periodicity": "Q",
-        "periods": [
-          "2025Q4",
-          "2026Q1"
-        ],
-        "count": 2,
-        "source": "https://bhas.gov.ba/",
-        "checked": "2026-08-18",
-        "note": "Labour Force Survey, now quarterly (previously annual). Q1 2026 released 09/06/2026; Q2 2026 not yet published."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2025
+          "latest": 2026
         },
         {
           "name": "HIES - Living Standards Survey",
@@ -2375,7 +2363,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2385,7 +2373,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2395,7 +2383,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2405,7 +2393,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2415,7 +2403,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2425,7 +2413,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2435,7 +2423,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2445,7 +2433,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2455,7 +2443,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2465,7 +2453,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2475,7 +2463,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -2494,7 +2482,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -6987,15 +6975,15 @@
           "latest": 2026
         },
         {
+          "name": "LFS - Labour Force Survey",
+          "latest": 2026
+        },
+        {
           "name": "LFS-ADJ - EU Labour Force Survey adjusted series",
           "latest": 2026
         },
         {
           "name": "HIES - EU Statistics on Income and Living Conditions",
-          "latest": 2025
-        },
-        {
-          "name": "LFS - Labour Force Survey",
           "latest": 2025
         }
       ],
@@ -7074,7 +7062,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -9184,7 +9172,7 @@
       "frequency": 87.5,
       "recency": 100.0,
       "latest_year": 2025,
-      "latest_period": "2025Q3",
+      "latest_period": "2025Q4",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -9192,18 +9180,7 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": {
-        "nso": "INE Guatemala",
-        "nso_latest": "2025Q4",
-        "periodicity": "Q",
-        "periods": [
-          "2025Q4"
-        ],
-        "count": 1,
-        "source": "https://www.ine.gob.gt/encuesta-nacional-de-empleo-e-ingresos/",
-        "checked": "2026-08-18",
-        "note": "ENEIC (Encuesta Nacional de Empleo e Ingresos Continua) replaced the annual ENEI. Official listing runs to Q4 2025. Press reported a 2026Q1 figure but no 2026 quarter appears on the INE page, so it is not counted."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Employment and Income Survey",
@@ -10947,7 +10924,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10957,7 +10934,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -12909,7 +12886,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026M07",
+      "latest_period": "2026M08",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -13328,8 +13305,8 @@
       "coverage": 88.1,
       "frequency": 100.0,
       "recency": 100.0,
-      "latest_year": 2025,
-      "latest_period": "2025Q4",
+      "latest_year": 2026,
+      "latest_period": "2026Q2",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -13338,22 +13315,11 @@
       ],
       "n_covered": 16,
       "n_total": 19,
-      "pending": {
-        "nso": "Central Statistical Office",
-        "nso_latest": "2026Q1",
-        "periodicity": "Q",
-        "periods": [
-          "2026Q1"
-        ],
-        "count": 1,
-        "source": "https://stats.gov.lc/publications/",
-        "checked": "2026-08-18",
-        "note": "Quarterly Labour Force Survey with a continuous dissemination programme — the most current NSO in the Eastern Caribbean. Q1 2026 released June 2026. CSO notes some historical LFS tables around 2020 are misaligned and under correction."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2025
+          "latest": 2026
         },
         {
           "name": "HIES - Survey on Living Conditions",
@@ -13363,7 +13329,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -13373,7 +13339,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13384,7 +13350,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13395,7 +13361,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13406,7 +13372,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13417,7 +13383,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13428,7 +13394,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -13446,7 +13412,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -13456,7 +13422,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -13466,7 +13432,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -13485,7 +13451,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18177,10 +18143,10 @@
       "country": "Philippines",
       "region": "Asia and the Pacific",
       "coverage": 88.1,
-      "frequency": 95.0,
-      "recency": 90.9,
-      "latest_year": 2024,
-      "latest_period": "2024Q4",
+      "frequency": 100.0,
+      "recency": 100.0,
+      "latest_year": 2025,
+      "latest_period": "2025Q4",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -18194,18 +18160,6 @@
         "nso_latest": "2026M06",
         "periodicity": "M",
         "periods": [
-          "2025M01",
-          "2025M02",
-          "2025M03",
-          "2025M04",
-          "2025M05",
-          "2025M06",
-          "2025M07",
-          "2025M08",
-          "2025M09",
-          "2025M10",
-          "2025M11",
-          "2025M12",
           "2026M01",
           "2026M02",
           "2026M03",
@@ -18213,7 +18167,7 @@
           "2026M05",
           "2026M06"
         ],
-        "count": 18,
+        "count": 6,
         "source": "https://psa.gov.ph/statistics/labor-force-survey",
         "checked": "2026-08-18",
         "note": "Labor Force Survey, monthly. June 2026 released 06/08/2026 (Ref. No. 2026-255)."
@@ -18221,7 +18175,7 @@
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2024
+          "latest": 2025
         },
         {
           "name": "HIES - Household Income and Expenditure Survey",
@@ -18231,7 +18185,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18241,7 +18195,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18252,7 +18206,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18263,7 +18217,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18274,7 +18228,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18285,7 +18239,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18296,7 +18250,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -18307,7 +18261,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18317,7 +18271,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18327,7 +18281,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18337,7 +18291,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -18354,7 +18308,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20354,7 +20308,7 @@
       "frequency": 77.5,
       "recency": 100.0,
       "latest_year": 2025,
-      "latest_period": "2025Q1",
+      "latest_period": "2025Q4",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -20367,12 +20321,9 @@
         "nso_latest": "2026Q1",
         "periodicity": "Q",
         "periods": [
-          "2025Q2",
-          "2025Q3",
-          "2025Q4",
           "2026Q1"
         ],
-        "count": 4,
+        "count": 1,
         "source": "https://www.ansd.sn/Indicateur/enquete-emploi",
         "checked": "2026-08-18",
         "note": "Enquête Nationale sur l'Emploi au Sénégal (ENES), quarterly. T1 2026 online 01/07/2026; the site states the next release is 30/09/2026, so Q2 2026 is not out."
@@ -20799,10 +20750,10 @@
       "country": "Serbia",
       "region": "Europe and Central Asia",
       "coverage": 100.0,
-      "frequency": 92.5,
+      "frequency": 97.5,
       "recency": 100.0,
-      "latest_year": 2025,
-      "latest_period": "2025Q4",
+      "latest_year": 2026,
+      "latest_period": "2026Q1",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -20810,25 +20761,14 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": {
-        "nso": "Statistical Office of the Republic of Serbia",
-        "nso_latest": "2026Q1",
-        "periodicity": "Q",
-        "periods": [
-          "2026Q1"
-        ],
-        "count": 1,
-        "source": "https://ec.europa.eu/eurostat/databrowser/view/lfsi_emp_q/default/table?lang=en",
-        "checked": "2026-08-18",
-        "note": "Labour Force Survey, confirmed present in Eurostat (lfsi_emp_q). Eurostat reflects data the NSO has transmitted, so this is a FLOOR — the national release may be newer."
-      },
+      "pending": null,
       "sources": [
         {
-          "name": "HIES - Survey on Income and living Conditions",
-          "latest": 2025
+          "name": "LFS - Labour Force Survey",
+          "latest": 2026
         },
         {
-          "name": "LFS - Labour Force Survey",
+          "name": "HIES - Survey on Income and living Conditions",
           "latest": 2025
         },
         {
@@ -20839,7 +20779,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20849,7 +20789,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20859,7 +20799,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20869,7 +20809,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20879,7 +20819,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20889,7 +20829,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20899,7 +20839,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20919,7 +20859,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20929,7 +20869,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20939,7 +20879,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -20958,7 +20898,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2025,
+          "latest": 2026,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23201,10 +23141,10 @@
       "country": "Tanzania, United Republic of",
       "region": "Africa",
       "coverage": 94.9,
-      "frequency": 52.5,
-      "recency": 90.9,
-      "latest_year": 2024,
-      "latest_period": "2024Q4",
+      "frequency": 57.5,
+      "recency": 100.0,
+      "latest_year": 2025,
+      "latest_period": "2025Q4",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -23212,22 +23152,11 @@
       ],
       "n_covered": 18,
       "n_total": 19,
-      "pending": {
-        "nso": "National Bureau of Statistics",
-        "nso_latest": "2025",
-        "periodicity": "A",
-        "periods": [
-          "2025"
-        ],
-        "count": 1,
-        "source": "https://www.nbs.go.tz/statistics/topic/labour-and-employment-report",
-        "checked": "2026-08-18",
-        "note": "Integrated Labour Force Survey, now annual. ILFS 2025 key findings released 15/07/2026 (ILFS 2024 released 07/11/2025)."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2024
+          "latest": 2025
         },
         {
           "name": "HIES - National Panel Survey",
@@ -23241,7 +23170,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23251,7 +23180,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23261,7 +23190,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23271,7 +23200,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23281,7 +23210,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23291,7 +23220,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23301,7 +23230,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23318,7 +23247,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23328,7 +23257,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23338,7 +23267,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23348,7 +23277,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -23357,7 +23286,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -23367,7 +23296,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -23376,7 +23305,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -23385,7 +23314,7 @@
         },
         "EMP_TEMP_SEX_AGE_CCT_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -23403,7 +23332,7 @@
         },
         "EMP_TEMP_SEX_AGE_DSB_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -23412,7 +23341,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27404,10 +27333,10 @@
       "country": "Belarus",
       "region": "Europe and Central Asia",
       "coverage": 86.4,
-      "frequency": 75.0,
-      "recency": 90.9,
-      "latest_year": 2024,
-      "latest_period": "2024",
+      "frequency": 80.0,
+      "recency": 100.0,
+      "latest_year": 2025,
+      "latest_period": "2025",
       "best_periodicity": "A",
       "periodicities": [
         "A"
@@ -27419,14 +27348,10 @@
         "nso_latest": "2026Q2",
         "periodicity": "Q",
         "periods": [
-          "2025Q1",
-          "2025Q2",
-          "2025Q3",
-          "2025Q4",
           "2026Q1",
           "2026Q2"
         ],
-        "count": 6,
+        "count": 2,
         "source": "https://www.belstat.gov.by/ofitsialnaya-statistika/solialnaya-sfera/trud/operativnaya-informatsiya_8/",
         "checked": "2026-08-18",
         "note": "Household labour force survey based employment/unemployment, quarterly. Q2 2026 published; a June 2026 monthly release also exists."
@@ -27434,13 +27359,13 @@
       "sources": [
         {
           "name": "LFS - Labour Force Survey",
-          "latest": 2024
+          "latest": 2025
         }
       ],
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27449,7 +27374,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27458,7 +27383,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27467,7 +27392,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27476,7 +27401,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27485,7 +27410,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27494,7 +27419,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27512,7 +27437,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27521,7 +27446,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27530,7 +27455,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27546,7 +27471,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27562,7 +27487,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27571,7 +27496,7 @@
         },
         "EMP_TEMP_SEX_AGE_CCT_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27580,7 +27505,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
