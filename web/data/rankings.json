@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-13 02:59",
+  "generated": "2026-10-20 01:02",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -18421,7 +18421,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -19136,7 +19136,7 @@
     },
     {
       "iso3": "PSE",
-      "country": "Palestine, State of",
+      "country": "Occupied Palestinian Territory",
       "region": "Arab States",
       "coverage": 100.0,
       "frequency": 92.5,
