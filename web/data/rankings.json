@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-20 01:02",
+  "generated": "2026-10-27 01:22",
   "current_year": 2026,
   "index_name": "LFS Coverage Index",
   "source": "ILOSTAT (ilostat.ilo.org)",
@@ -2363,6 +2363,210 @@
       }
     },
     {
+      "iso3": "BHS",
+      "country": "Bahamas",
+      "region": "Americas",
+      "coverage": 93.2,
+      "frequency": 77.5,
+      "recency": 100.0,
+      "latest_year": 2026,
+      "latest_period": "2026Q1",
+      "best_periodicity": "Q",
+      "periodicities": [
+        "Q",
+        "A"
+      ],
+      "n_covered": 17,
+      "n_total": 19,
+      "pending": null,
+      "sources": [
+        {
+          "name": "LFS - Labour Force & Household Survey",
+          "latest": 2026
+        }
+      ],
+      "indicators": {
+        "POP_XWAP_SEX_AGE_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EAP_TEAP_SEX_AGE_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EAP_DWAP_SEX_AGE_RT": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_TEMP_SEX_AGE_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_DWAP_SEX_AGE_RT": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "UNE_TUNE_SEX_AGE_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "UNE_DEAP_SEX_AGE_RT": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "LUU_XLU4_SEX_AGE_RT": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_TEMP_SEX_STE_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_TEMP_SEX_OCU_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_TEMP_SEX_ECO_NB": {
+          "covered": true,
+          "latest": 2026,
+          "periodicity": "Q",
+          "periodicities": [
+            "Q",
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_NIFL_SEX_RT": {
+          "covered": true,
+          "latest": 2024,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": null
+        },
+        "HOW_TEMP_SEX_ECO_NB": {
+          "covered": true,
+          "latest": 2023,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": null
+        },
+        "EAR_EMTA_SEX_ECO_CUR_NB": {
+          "covered": true,
+          "latest": 2024,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": null
+        },
+        "UNE_TUNE_SEX_AGE_DUR_NB": {
+          "covered": true,
+          "latest": 2024,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": null
+        },
+        "EMP_TEMP_SEX_AGE_CCT_NB": {
+          "covered": true,
+          "latest": 2024,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": "citizenship"
+        },
+        "EMP_TEMP_SEX_GEO_NB": {
+          "covered": false,
+          "latest": null,
+          "periodicity": null,
+          "periodicities": [],
+          "via": null
+        },
+        "EMP_TEMP_SEX_AGE_DSB_NB": {
+          "covered": false,
+          "latest": null,
+          "periodicity": null,
+          "periodicities": [],
+          "via": null
+        },
+        "EMP_TEMP_SEX_EDU_NB": {
+          "covered": true,
+          "latest": 2024,
+          "periodicity": "A",
+          "periodicities": [
+            "A"
+          ],
+          "via": null
+        }
+      }
+    },
+    {
       "iso3": "BIH",
       "country": "Bosnia and Herzegovina",
       "region": "Europe and Central Asia",
@@ -4578,7 +4782,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026M07",
+      "latest_period": "2026M08",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -4587,18 +4791,7 @@
       ],
       "n_covered": 19,
       "n_total": 19,
-      "pending": {
-        "nso": "DANE",
-        "nso_latest": "2026M08",
-        "periodicity": "M",
-        "periods": [
-          "2026M08"
-        ],
-        "count": 1,
-        "source": "https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo",
-        "checked": "2026-10-11",
-        "note": "Gran Encuesta Integrada de Hogares (GEIH), monthly. Reference month August 2026, published 30/09/2026."
-      },
+      "pending": null,
       "sources": [
         {
           "name": "LFS - Integrated Household Survey",
@@ -10107,10 +10300,10 @@
       "country": "Indonesia",
       "region": "Asia and the Pacific",
       "coverage": 100.0,
-      "frequency": 82.5,
+      "frequency": 87.5,
       "recency": 90.9,
       "latest_year": 2024,
-      "latest_period": "2023Q3",
+      "latest_period": "2024Q3",
       "best_periodicity": "Q",
       "periodicities": [
         "Q",
@@ -10128,7 +10321,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10138,7 +10331,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10148,7 +10341,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10158,7 +10351,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10168,7 +10361,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10178,7 +10371,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10188,7 +10381,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10198,7 +10391,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10208,7 +10401,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10218,7 +10411,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10228,7 +10421,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10238,7 +10431,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -10247,7 +10440,7 @@
         },
         "HOW_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -10257,7 +10450,7 @@
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -10266,7 +10459,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -10284,7 +10477,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -10293,7 +10486,7 @@
         },
         "EMP_TEMP_SEX_AGE_DSB_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -10302,7 +10495,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2023,
+          "latest": 2024,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -12951,7 +13144,7 @@
       "frequency": 100.0,
       "recency": 100.0,
       "latest_year": 2026,
-      "latest_period": "2026M08",
+      "latest_period": "2026Q3",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -16719,10 +16912,10 @@
       "country": "Nigeria",
       "region": "Africa",
       "coverage": 100.0,
-      "frequency": 85.0,
-      "recency": 90.9,
-      "latest_year": 2024,
-      "latest_period": "2024Q4",
+      "frequency": 90.0,
+      "recency": 100.0,
+      "latest_year": 2025,
+      "latest_period": "2025Q2",
       "best_periodicity": "M",
       "periodicities": [
         "M",
@@ -16734,11 +16927,11 @@
       "pending": null,
       "sources": [
         {
-          "name": "HS - General Household Survey",
-          "latest": 2024
+          "name": "LFS - Unemployment, Under-employment Watch",
+          "latest": 2025
         },
         {
-          "name": "LFS - Unemployment, Under-employment Watch",
+          "name": "HS - General Household Survey",
           "latest": 2024
         },
         {
@@ -16753,7 +16946,7 @@
       "indicators": {
         "POP_XWAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -16763,7 +16956,7 @@
         },
         "EAP_TEAP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16774,7 +16967,7 @@
         },
         "EAP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16785,7 +16978,7 @@
         },
         "EMP_TEMP_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16796,7 +16989,7 @@
         },
         "EMP_DWAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16807,7 +17000,7 @@
         },
         "UNE_TUNE_SEX_AGE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16818,7 +17011,7 @@
         },
         "UNE_DEAP_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "M",
           "periodicities": [
             "M",
@@ -16829,7 +17022,7 @@
         },
         "LUU_XLU4_SEX_AGE_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -16839,7 +17032,7 @@
         },
         "EMP_TEMP_SEX_STE_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -16849,7 +17042,7 @@
         },
         "EMP_TEMP_SEX_OCU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -16859,7 +17052,7 @@
         },
         "EMP_TEMP_SEX_ECO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "Q",
           "periodicities": [
             "Q",
@@ -16869,7 +17062,7 @@
         },
         "EMP_NIFL_SEX_RT": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -16896,7 +17089,7 @@
         },
         "UNE_TUNE_SEX_AGE_DUR_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -16914,7 +17107,7 @@
         },
         "EMP_TEMP_SEX_GEO_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -16932,7 +17125,7 @@
         },
         "EMP_TEMP_SEX_EDU_NB": {
           "covered": true,
-          "latest": 2024,
+          "latest": 2025,
           "periodicity": "A",
           "periodicities": [
             "A"
@@ -27364,198 +27557,6 @@
           "latest": null,
           "periodicity": null,
           "periodicities": [],
-          "via": null
-        }
-      }
-    },
-    {
-      "iso3": "BHS",
-      "country": "Bahamas",
-      "region": "Americas",
-      "coverage": 93.2,
-      "frequency": 60.0,
-      "recency": 90.9,
-      "latest_year": 2024,
-      "latest_period": "2024",
-      "best_periodicity": "A",
-      "periodicities": [
-        "A"
-      ],
-      "n_covered": 17,
-      "n_total": 19,
-      "pending": null,
-      "sources": [
-        {
-          "name": "LFS - Labour Force & Household Survey",
-          "latest": 2024
-        }
-      ],
-      "indicators": {
-        "POP_XWAP_SEX_AGE_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EAP_TEAP_SEX_AGE_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EAP_DWAP_SEX_AGE_RT": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_DWAP_SEX_AGE_RT": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "UNE_DEAP_SEX_AGE_RT": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "LUU_XLU4_SEX_AGE_RT": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_TEMP_SEX_STE_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_TEMP_SEX_OCU_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_TEMP_SEX_ECO_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_NIFL_SEX_RT": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "HOW_TEMP_SEX_ECO_NB": {
-          "covered": true,
-          "latest": 2023,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EAR_EMTA_SEX_ECO_CUR_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_DUR_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_CCT_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
-          "via": "citizenship"
-        },
-        "EMP_TEMP_SEX_GEO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_DSB_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_EDU_NB": {
-          "covered": true,
-          "latest": 2024,
-          "periodicity": "A",
-          "periodicities": [
-            "A"
-          ],
           "via": null
         }
       }
@@ -43420,308 +43421,6 @@
           "periodicities": [
             "A"
           ],
-          "via": null
-        },
-        "EAR_EMTA_SEX_ECO_CUR_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_DUR_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_CCT_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_GEO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_DSB_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_EDU_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        }
-      }
-    },
-    {
-      "iso3": "OMN",
-      "country": "Oman",
-      "region": "Arab States",
-      "coverage": 0.0,
-      "frequency": 15.0,
-      "recency": 0.0,
-      "latest_year": null,
-      "latest_period": null,
-      "best_periodicity": "irregular",
-      "periodicities": [],
-      "n_covered": 0,
-      "n_total": 19,
-      "pending": null,
-      "sources": [],
-      "indicators": {
-        "POP_XWAP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EAP_TEAP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EAP_DWAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_DWAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_DEAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "LUU_XLU4_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_STE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_OCU_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_ECO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_NIFL_SEX_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "HOW_TEMP_SEX_ECO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EAR_EMTA_SEX_ECO_CUR_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_DUR_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_CCT_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_GEO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_DSB_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_EDU_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        }
-      }
-    },
-    {
-      "iso3": "SMR",
-      "country": "San Marino",
-      "region": "Europe and Central Asia",
-      "coverage": 0.0,
-      "frequency": 15.0,
-      "recency": 0.0,
-      "latest_year": null,
-      "latest_period": null,
-      "best_periodicity": "irregular",
-      "periodicities": [],
-      "n_covered": 0,
-      "n_total": 19,
-      "pending": null,
-      "sources": [],
-      "indicators": {
-        "POP_XWAP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EAP_TEAP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EAP_DWAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_DWAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_TUNE_SEX_AGE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "UNE_DEAP_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "LUU_XLU4_SEX_AGE_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_STE_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_OCU_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_TEMP_SEX_ECO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "EMP_NIFL_SEX_RT": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
-          "via": null
-        },
-        "HOW_TEMP_SEX_ECO_NB": {
-          "covered": false,
-          "latest": null,
-          "periodicity": null,
-          "periodicities": [],
           "via": null
         },
         "EAR_EMTA_SEX_ECO_CUR_NB": {
